@@ -1,12 +1,14 @@
 import { defineStore } from 'pinia';
 
-export const useCounterStore = defineStore('counter', {
+export const useUserStore = defineStore('userStore', {
   state: () => ({
-    counter: 0,
+    isAuthenticated:false
   }),
+
   getters: {
     doubleCount: (state) => state.counter * 2,
   },
+
   actions: {
     increment() {
       this.counter++;
