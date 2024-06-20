@@ -9,9 +9,10 @@ const routes = [
       { path: 'components', component: () => import('pages/ComponentsPage.vue') },
       { path: 'smartphones', component: () => import('pages/SmartphonesPage.vue') },
       { path: 'games', component: () => import('pages/GamesPage.vue') },
-      { path: 'televisions', component: () => import('pages/TelevisionsPage.vue') },
       { path: 'login', component: () => import('pages/LoginPage.vue') },
-      { path: 'register', component: () => import('pages/RegisterPage.vue') }
+      { path: 'register', component: () => import('pages/RegisterPage.vue') },
+      { path: '/item/:id', component: () => import('pages/ItemPage.vue') },
+      { path: '/admin', component: () => import('pages/adminPage.vue') }
     ]
   },
   {

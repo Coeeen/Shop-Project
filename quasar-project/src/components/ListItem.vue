@@ -1,5 +1,5 @@
 <template>
-  <q-card class="row col-12">
+  <q-card class="row col-12" style="background-color: #0D0D13;color: whitesmoke">
     <q-card-section>
       <q-img :src="item.photo" alt="item Photo" class="item-photo" width="300px" height="200px" />
     </q-card-section>
@@ -13,7 +13,7 @@
         </q-item>
       </div>
 
-      <q-item class="row col-12  justify-between items-center">
+      <q-item class="row col-12 justify-between items-center">
         <q-item-label><b>Cena:</b> {{ item.price }} zł</q-item-label>
         <q-item-label><b>Osób, które kupiły:</b> {{ item.buyers }}</q-item-label>
 

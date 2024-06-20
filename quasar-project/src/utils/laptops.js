@@ -59,7 +59,7 @@ const laptops = ref([
     }
   },
   {
-    photo: 'https://cdn.ttgtmedia.com/rms/onlineimages/hp_elitebook_mobile.jpg',
+    photo: 'https://images.morele.net/i1064/12993724_5_i1064.jpg',
     title: 'Laptop ASUS ROG Zephyrus G14',
     description: 'Wyjątkowy laptop ASUS z wydajnym procesorem AMD Ryzen i dedykowaną kartą graficzną NVIDIA.',
     price: 7499.99,

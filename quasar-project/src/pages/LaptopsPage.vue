@@ -2,8 +2,9 @@
   <div class="row col-12 q-px-md">
     <div class="row col-11 q-mt-md q-ml-sm justify-between items-center">
       <div class="row col-12 q-my-md">
-        <q-input v-model="searchQuery" placeholder="Szukaj..." dense outlined class="q-mb-sm col-xl-3 col-xs-4"/>
-        <q-select v-model="sortOption" label="Sortowanie" :options="options" placeholder="Sortuj po" dense outlined class="q-mb-sm col-xl-3 col-xs-7 q-ml-sm" />
+        <q-input v-model="searchQuery" color="white" placeholder="Szukaj..." filled  dense outlined class="q-mb-sm col-xl-3 col-xs-4" :input-style="{color:'white'}"/>
+        <q-select v-model="sortOption" color="dark" label="Sortowanie" filled  :options="options" placeholder="Sortuj po"
+                  dense outlined class="text-color q-mb-sm col-xl-3 col-xs-7 q-ml-sm"  label-color="white" style="color: white"  standout=" text-white"/>
       </div>
 <!--      <q-icon name="view_list" size="32px" color="darkgrey" class="cursor-pointer" @click="handleChangeViewType"/>-->
     </div>
@@ -92,6 +93,8 @@ watch(sortOption, () => {
 });
 </script>
 
-<style scoped>
-/* Dodaj stylowanie według potrzeb */
+<style>
+.q-field__native, .q-field__prefix, .q-field__suffix, .q-field__input {
+  color: white !important;
+}
 </style>
