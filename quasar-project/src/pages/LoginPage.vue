@@ -11,18 +11,17 @@
           :speed="1"
           ref="anim"
           style="width: 300px"
-          class="q-mb-md"
         />
       </div>
 
       <div class="column q-col-gutter-lg justify-center" style="margin-top: 5px">
         <div class="col-12 col-md-6">
           <label class="text-white">Email:</label>
-          <q-input v-model="email" id="email" type="email" color="white" outlined dense class="bg-white text-dark" />
+          <q-input v-model="email" id="email" type="email" color="white" outlined dense class="bg-white text-dark" :input-style="{color:'black'}" />
         </div>
         <div class="col-12 col-md-6">
           <label class="text-white">Hasło:</label>
-          <q-input v-model="password" id="password" type="password" color="white" outlined dense class="bg-white text-dark" />
+          <q-input v-model="password" id="password" type="password" color="white" outlined dense class="bg-white text-dark" :input-style="{color:'black'}" />
         </div>
       </div>
 
@@ -35,37 +34,53 @@
 
 <script setup>
 import { ref } from 'vue';
-import { useUserStore } from "src/stores/UserStore";
-import { storeToRefs } from "pinia";
+import { useRouter } from 'vue-router';
+import { useUserStore } from 'src/stores/UserStore';
 import { useQuasar } from 'quasar';
-import { LottieAnimation } from "lottie-web-vue";
-import login from "../assets/svg/Login.json";
+import { LottieAnimation } from 'lottie-web-vue';
+import login from '../assets/svg/Login.json';
+import {storeToRefs} from "pinia";
 
-const { users, findUserByEmail } = storeToRefs(useUserStore());
-const { addUser } = useUserStore();
+const { findUserByEmail,  } = useUserStore();
+const {isAuthenticated,users} =storeToRefs(useUserStore())
+
+const $q = useQuasar();
+const router = useRouter();
 
 const email = ref('');
 const password = ref('');
-const $q = useQuasar();
+
+console.log(users.value)
 
 const handleSubmit = () => {
   if (!validateForm()) return;
 
-  if (findUserByEmail(email.value)) {
+  const user = findUserByEmail(email.value);
+
+  if (!user) {
     $q.notify({
       color: 'negative',
-      message: 'Istnieje już użytkownik z podobnym adresem email.'
+      message: 'Nie znaleziono użytkownika o podanym adresie email.'
     });
     return;
   }
 
-  // Logika logowania użytkownika
+  if (user.password !== password.value) {
+    $q.notify({
+      color: 'negative',
+      message: 'Nieprawidłowe hasło.'
+    });
+    return;
+  }
 
   clearForm();
   $q.notify({
     color: 'positive',
     message: 'Pomyślnie zalogowano!'
   });
+
+  isAuthenticated.value = true
+  router.push('/');
 };
 
 const validateForm = () => {
@@ -93,11 +108,12 @@ const clearForm = () => {
   email.value = '';
   password.value = '';
 };
+
 </script>
 
 <style scoped lang="scss">
 .title {
-  font-size: 3.6rem;
+  font-size: 3.2rem;
   margin: 0;
   font-weight: bold;
   letter-spacing: 2px;

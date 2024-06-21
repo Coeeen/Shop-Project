@@ -20,12 +20,10 @@
 import { ref, computed, watch, toRefs } from 'vue';
 import laptopsData from '../utils/laptops';
 import ListItem from 'src/components/ListItem.vue';
+import { useRouter } from 'vue-router'
 
-const viewType = ref(true);
+const router = useRouter()
 
-const handleChangeViewType = () => {
-  viewType.value = !viewType.value;
-}
 
 const { laptops, searchQuery, sortOption } = toRefs({
   laptops: ref(laptopsData),
@@ -55,7 +53,7 @@ const sortLaptops = (data, option) => {
     case 'Sortuj po ocenach':
       sortedData.sort((a, b) => {
         if (!a.comment || !b.comment || !a.comment.rating || !b.comment.rating) {
-          return 0; // Obsługa brakujących ocen
+          return 0;
         }
         return b.comment.rating - a.comment.rating;
       });
@@ -70,11 +68,6 @@ const sortLaptops = (data, option) => {
   return sortedData;
 };
 
-const inputShadowText = ref('');
-
-const processInputFill = () => {
-  inputShadowText.value = searchQuery.value;
-};
 
 const filteredLaptops = computed(() => {
   let filteredData = laptops.value;

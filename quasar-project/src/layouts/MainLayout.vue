@@ -21,7 +21,7 @@
             option-label="title"
             option-value="id"
             @filter="filterFn"
-            hint="Text autocomplete"
+            hint="Wyszukaj"
             :input-style="{color:'white'}"
             color="white"
             style="width: 50%"
@@ -36,11 +36,11 @@
           </q-select>
           <q-btn class="bg-white text-dark q-ml-md" style="height: 20px;color: red" @click="navigateToItem">Szukaj</q-btn>
         </q-toolbar-title>
-        <div class="row col-2 justify-around">
+        <div class="row col-2 justify-around" v-if="!isAuthenticated">
           <router-link to="/login" class="text-dark" style="text-decoration: none">
             <q-toolbar-title class="text-white cursor-pointer" style="font-size: 12px;">
               <q-icon name="person" size="32px" />
-              Zaloguj się
+               Zaloguj się
             </q-toolbar-title>
           </router-link>
           <router-link to="/register" class="text-dark" style="text-decoration: none">
@@ -54,10 +54,10 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
-      <q-list class="q-pa-md q-gutter-lg q-mt-xl flex flex-center">
+    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered  style="background-color: #1E222A">
+      <q-list class="q-pa-md q-gutter-lg q-mt-xl flex flex-center" >
         <router-link to="/" class="full-width text-dark" style="text-decoration: none">
-          <q-item clickable v-ripple style="width: 100%">
+          <q-item clickable v-ripple style="width: 100%;color: white">
             <q-item-section avatar>
               <q-icon name="home" />
             </q-item-section>
@@ -67,7 +67,7 @@
           </q-item>
         </router-link>
         <router-link to="/laptops" class="full-width text-dark" style="text-decoration: none">
-          <q-item clickable v-ripple style="width: 100%">
+          <q-item clickable v-ripple style="width: 100%;color: white">
             <q-item-section avatar>
               <q-icon name="laptop" />
             </q-item-section>
@@ -77,7 +77,7 @@
           </q-item>
         </router-link>
         <router-link to="/computers" class="full-width text-dark" style="text-decoration: none">
-          <q-item clickable v-ripple style="width: 100%">
+          <q-item clickable v-ripple style="width: 100%;color: white">
             <q-item-section avatar>
               <q-icon name="desktop_windows" />
             </q-item-section>
@@ -87,7 +87,7 @@
           </q-item>
         </router-link>
         <router-link to="/components" class="full-width text-dark" style="text-decoration: none">
-          <q-item clickable v-ripple style="width: 100%">
+          <q-item clickable v-ripple style="width: 100%;color: white">
             <q-item-section avatar>
               <q-icon name="memory" />
             </q-item-section>
@@ -97,7 +97,7 @@
           </q-item>
         </router-link>
         <router-link to="/smartphones" class="full-width text-dark" style="text-decoration: none">
-          <q-item clickable v-ripple style="width: 100%">
+          <q-item clickable v-ripple style="width: 100%;color: white">
             <q-item-section avatar>
               <q-icon name="smartphone" />
             </q-item-section>
@@ -107,7 +107,7 @@
           </q-item>
         </router-link>
         <router-link to="/games" class="full-width text-dark" style="text-decoration: none">
-          <q-item clickable v-ripple style="width: 100%">
+          <q-item clickable v-ripple style="width: 100%;color: white">
             <q-item-section avatar>
               <q-icon name="sports_esports" />
             </q-item-section>
@@ -119,8 +119,26 @@
       </q-list>
     </q-drawer>
 
-    <q-drawer v-if="isAuthenticated" show-if-above v-model="rightDrawerOpen" side="right" bordered>
-      <!-- Drawer content -->
+    <q-drawer v-if="isAuthenticated" show-if-above v-model="rightDrawerOpen" side="right" bordered style="background-color: #1E222A">
+      <div v-if="card.length > 0" class="q-pa-md">
+        <div v-for="(item, index) in card" :key="index" class="q-mb-md q-pa-md text-white" style="border-radius: 20px; background-color: #0D0D13">
+          <div class="row col-12 justify-between">
+            <q-img :src="item.photo" alt="item Photo" class="item-photo" width="50px" height="50px" style="border-radius: 5px" />
+            <div class="row col-6 justify-between items-center">
+              <q-btn color="primary" style="height: 10px" @click="addItemToCard(item)">+</q-btn>
+              <q-item-label>{{ item.count }}</q-item-label>
+              <q-btn color="primary" style="height: 10px" @click="removeItemFromCard(item)">-</q-btn>
+            </div>
+          </div>
+          <q-item-label class="q-mt-sm">{{ item.title }}</q-item-label>
+          <q-item-label><b>Cena:</b> {{ item.price }} zł</q-item-label>
+        </div>
+        <q-item-label class="text-white"><b>Łączna suma:</b> {{ totalPrice }} zł</q-item-label>
+        <q-btn color="primary" class="q-mt-md" @click="proceedToCheckout">Przejdź do zapłaty</q-btn>
+      </div>
+      <div v-else class="q-pa-md text-white">
+        Koszyk jest pusty.
+      </div>
     </q-drawer>
 
     <q-page-container>
@@ -132,6 +150,7 @@
 <script>
 import { ref, computed } from 'vue'
 import { useUserStore } from 'src/stores/UserStore'
+import { shopStore } from 'src/stores/ShopStore'
 import { storeToRefs } from 'pinia'
 import database from 'src/utils/database'
 import { useRouter } from 'vue-router'
@@ -143,12 +162,15 @@ export default {
     const selectedItemId = ref(null)
     const search = ref('')
     const { isAuthenticated } = storeToRefs(useUserStore())
+    const { card,totalPrice } = storeToRefs(shopStore())
+    const { addItemToCard,removeItemFromCard} = shopStore()
     const router = useRouter()
 
     const filterFn = (val, update) => {
       search.value = val
       update()
     }
+
 
     const filteredOptions = computed(() => {
       if (!search.value.trim()) {
@@ -174,24 +196,31 @@ export default {
       }
     }
 
+    const proceedToCheckout = () => {
+      router.push('/checkout');
+    };
+
     return {
+      card,
       leftDrawerOpen,
       rightDrawerOpen,
       selectedItemId,
       search,
       isAuthenticated,
       filteredOptions,
+      totalPrice,
       filterFn,
       toggleLeftDrawer,
       toggleRightDrawer,
-      navigateToItem
+      navigateToItem,
+      proceedToCheckout,
+      addItemToCard,
+      removeItemFromCard
     }
   }
 }
 </script>
 
 <style scoped>
-.text-dark {
-  color: var(--q-color-dark);
-}
+
 </style>

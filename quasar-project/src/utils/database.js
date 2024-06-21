@@ -57,6 +57,7 @@ const database = ref([
     ]
   },
   {
+    id:12345,
     photo: 'https://example.com/processor1.jpg',
     title: 'Intel Core i9-12900K',
     description: 'Flagowy procesor Intel z serii Alder Lake dla wymagających użytkowników.',
