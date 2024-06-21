@@ -1,23 +1,63 @@
-
-
 <template>
   <div class="q-pa-md">
-  <q-table
-    title="Treats"
-    :rows="database"
-    :columns="columns"
-    row-key="name"
-    dark
-    :rows-per-page-options="[10,20,30]"
-  >
-  </q-table>
+    <q-table
+      title="Baza danych uzytkowników"
+      :rows="database"
+      :columns="columns"
+      row-key="name"
+      class="q-mb-md"
+      dark
+      :rows-per-page-options="[10, 20, 30]"
+    >
+      <template v-slot:body-cell-akcje="props">
+        <q-td :props="props">
+          <div @click="handleDeleteFromDatabase(props.row.id)" class="q-pa-xs bg-red inline-block row justify-center items-center text-center cursor-pointer" style="border-radius: 20px;width: 50px" ><q-icon name="delete" /></div>
+        </q-td>
+      </template>
+
+    </q-table>
+    <q-table
+      title="Baza danych użytkowników"
+      :rows="users"
+      :columns="columnsUsers"
+      row-key="email"
+      dark
+      :rows-per-page-options="[10, 20, 30]"
+    >
+      <template v-slot:body-cell-akcje="props">
+        <q-td :props="props">
+          <div @click="deleteUser(props.row.email)" class="q-pa-xs bg-red inline-block row justify-center items-center text-center cursor-pointer" style="border-radius: 20px;width: 50px" ><q-icon name="delete" /></div>
+        </q-td>
+      </template>
+
+
+    </q-table>
   </div>
 </template>
 
 <script setup>
-import database from "../utils/database"
+import { useUserStore } from 'src/stores/UserStore'
+import { onBeforeMount } from 'vue'
+import database from "src/utils/database";
 
-console.log(database)
+const { fetchRandomUsers, addUser, users,deleteUser } = useUserStore()
+
+
+const handleDeleteFromDatabase = (id) => {
+  database.value = database.value.filter(el => el.id !==id)
+}
+
+onBeforeMount(async () => {
+  const fetchedUsers = await fetchRandomUsers()
+  await fetchedUsers.forEach(user => {
+    addUser({
+      email: user.email,
+      password:'trudnehaslo123',
+      firstName: user.name.first,
+      lastName: user.name.last
+    })
+  })
+})
 
 const columns = [
   {
@@ -28,34 +68,63 @@ const columns = [
     field: row => row.title,
     sortable: true
   },
-  { name: 'Opis', align: 'center', label: 'Opis',    field: row => row.description, sortable: true },
-  { name: 'Cena', label: 'Cena',    field: row => row.price, sortable: true },
-  { name: 'Liczba zakupów', label: 'Liczba zakupów',    field: row => row.buyers, },
-  { name: 'akcje', label: 'akcje',    field: row => row.id, },
+  {
+    name: 'Opis',
+    align: 'center',
+    label: 'Opis',
+    field: row => row.description,
+    sortable: true
+  },
+  {
+    name: 'Cena',
+    label: 'Cena',
+    field: row => row.price,
+    sortable: true
+  },
+  {
+    name: 'Liczba zakupów',
+    label: 'Liczba zakupów',
+    field: row => row.buyers,
+  },
+  {
+    name: 'akcje',
+    label: 'akcje',
+    field: row => row.id,
+  },
 ]
-// {
-//   id:25,
-//     photo: 'https://images.morele.net/i1064/11202027_0_i1064.jpg',
-//   title: 'Laptop Lenovo Legion 5 Pro',
-//   description: 'Potężny laptop gamingowy Lenovo z procesorem AMD Ryzen 7 i ekranem 16-calowym o wysokiej częstotliwości odświeżania.',
-//   price: 7799.99,
-//   buyers: 110,
-//   comment: {
-//   rating: 4.7,
-//     author: 'Sophia Garcia',
-//     text: 'Idealny laptop do gier. Bardzo dobrze wykonany.'
-// },
-//   specifications: {
-//     procesor: 'AMD Ryzen 7 5800H',
-//       ram: '16 GB DDR4',
-//       pamiec: '512 GB PCIe NVMe SSD',
-//       ekran: '16" WQXGA 165Hz IPS',
-//       system: 'Windows 10 Home'
-//   }
-// },
 
+const columnsUsers = [
+  {
+    name: 'Email',
+    required: true,
+    label: 'Email',
+    align: 'left',
+    field: 'email',
+    sortable: true
+  },
+  {
+    name: 'Imię',
+    label: 'Imię',
+    align: 'left',
+    field: 'firstName',
+    sortable: true
+  },
+  {
+    name: 'Nazwisko',
+    label: 'Nazwisko',
+    align: 'left',
+    field: 'lastName',
+    sortable: true
+  },
+  {
+    name: 'akcje',
+    label: 'akcje',
+    align: 'left',
+    field: 'email',
+    sortable: true
+  },
+]
 </script>
 
 <style scoped>
-
 </style>

@@ -2,7 +2,9 @@ import { defineStore } from 'pinia';
 
 export const shopStore = defineStore('shopStore', {
   state: () => ({
-    card: []
+    card: [],
+    cupons:['BIU','Studia']
+
   }),
 
   getters: {

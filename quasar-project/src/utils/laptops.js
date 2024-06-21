@@ -2,6 +2,7 @@ import { ref } from 'vue';
 
 const laptops = ref([
   {
+    id:15,
     photo: 'https://images.morele.net/i1064/13205251_1_i1064.jpg',
     title: 'Laptop Dell XPS 13',
     description: 'Najnowszy laptop Dell z procesorem Intel Core i7 i wyświetlaczem Full HD.',
@@ -21,6 +22,7 @@ const laptops = ref([
     }
   },
   {
+    id:16,
     photo: 'https://m.media-amazon.com/images/I/61Qe0euJJZL.jpg',
     title: 'Laptop Apple MacBook Pro 16"',
     description: 'Potężny laptop Apple z 16-calowym wyświetlaczem Retina i procesorem czterordzeniowym.',
@@ -40,6 +42,7 @@ const laptops = ref([
     }
   },
   {
+    id:17,
     photo: 'https://images.morele.net/i1064/13179204_0_i1064.jpg',
     title: 'Laptop HP Spectre x360 14"',
     description: 'Elegancki laptop HP z obrotowym 14-calowym wyświetlaczem 4K i długim czasem pracy na baterii.',
@@ -59,6 +62,7 @@ const laptops = ref([
     }
   },
   {
+    id:'18',
     photo: 'https://images.morele.net/i1064/12993724_5_i1064.jpg',
     title: 'Laptop ASUS ROG Zephyrus G14',
     description: 'Wyjątkowy laptop ASUS z wydajnym procesorem AMD Ryzen i dedykowaną kartą graficzną NVIDIA.',
@@ -78,6 +82,7 @@ const laptops = ref([
     }
   },
   {
+    id:19,
     photo: 'https://images.morele.net/i1064/13179204_0_i1064.jpg',
     title: 'Laptop Micrsystemoft Surface Laptop 4',
     description: 'Elegancki laptop Micrsystemoft z ekranem PixelSense i wydajnym procesorem Intel Core i5.',
@@ -97,6 +102,7 @@ const laptops = ref([
     }
   },
   {
+    id:20,
     photo: 'https://images.morele.net/i1064/13219110_0_i1064.jpg',
     title: 'Laptop Acer Predator Helisystem 300',
     description: 'Potężny gamingowy laptop Acer z procesorem Intel Core i7 i kartą graficzną NVIDIA GeForce RTX 3060.',
@@ -116,6 +122,7 @@ const laptops = ref([
     }
   },
   {
+    id:21,
     photo: 'https://images.morele.net/i1064/13192898_0_i1064.jpg',
     title: 'Laptop Razer Blade 15',
     description: 'Zaawansowany laptop Razer z procesorem Intel Core i7 i ekranem Full HD o wysokiej częstotliwości odświeżania.',
@@ -135,6 +142,7 @@ const laptops = ref([
     }
   },
   {
+    id:22,
     photo: 'https://images.morele.net/i1064/12789172_0_i1064.jpg',
     title: 'Laptop Samsung Galaxy Book Pro 360',
     description: 'Zwinny laptop Samsung z obrotowym ekranem Super AMOLED i wydajnym procesorem Intel Core i7.',
@@ -154,6 +162,7 @@ const laptops = ref([
     }
   },
   {
+    id:23,
     photo: 'https://images.morele.net/i1064/13222597_15_i1064.jpg',
     title: 'Laptop Huawei MateBook X Pro',
     description: 'Elegancki laptop Huawei z wyświetlaczem 3K FullView i mocnym procesorem Intel Core i7.',
@@ -173,6 +182,7 @@ const laptops = ref([
     }
   },
   {
+    id:24,
     photo: 'https://images.morele.net/i1064/13151580_0_i1064.jpg',
     title: 'Laptop MSI GS66 Stealth',
     description: 'Gamingowy laptop MSI z procesorem Intel Core i9 i kartą graficzną NVIDIA GeForce RTX 3080.',
@@ -192,6 +202,7 @@ const laptops = ref([
     }
   },
   {
+    id:25,
     photo: 'https://images.morele.net/i1064/11202027_0_i1064.jpg',
     title: 'Laptop Lenovo Legion 5 Pro',
     description: 'Potężny laptop gamingowy Lenovo z procesorem AMD Ryzen 7 i ekranem 16-calowym o wysokiej częstotliwości odświeżania.',
@@ -211,6 +222,7 @@ const laptops = ref([
     }
   },
   {
+    id:26,
     photo: 'https://images.morele.net/i1064/13123191_1_i1064.jpg',
     title: 'Laptop ASUS VivoBook S15',
     description: 'Stylowy laptop ASUS z wydajnym procesorem Intel Core i5 i kolorowym wyświetlaczem NanoEdge.',
@@ -230,6 +242,7 @@ const laptops = ref([
     }
   },
   {
+    id:27,
     photo: 'https://images.morele.net/i1064/13147452_0_i1064.jpg',
     title: 'Laptop Dell Inspiron 15 5000',
     description: 'Praktyczny laptop Dell z procesorem Intel Core i5 i wygodną klawiaturą o podświetleniu LED.',
@@ -249,6 +262,7 @@ const laptops = ref([
     }
   },
   {
+    id:28,
     photo: 'https://images.morele.net/i1064/13186836_0_i1064.jpg',
     title: 'Laptop HP Pavilion x360 14"',
     description: 'Uniwersalny laptop HP z obrotowym 14-calowym wyświetlaczem Full HD i długim czasem pracy na baterii.',
@@ -268,6 +282,7 @@ const laptops = ref([
     }
   },
   {
+    id:29,
     photo: 'https://images.morele.net/i1064/11095085_0_i1064.jpg',
     title: 'Laptop Acer Swift 5',
     description: 'Lekki i smukły laptop Acer z procesorem Intel Core i7 i wygodnym wyświetlaczem Full HD IPS.',
@@ -287,6 +302,7 @@ const laptops = ref([
     }
   },
   {
+    id:30,
     photo: 'https://images.morele.net/i1064/13179204_0_i1064.jpg',
     title: 'Laptop MSI Prestige 14 Evo',
     description: 'Elegancki i lekki laptop MSI z procesorem Intel Core i7 i długim czasem pracy na baterii.',
@@ -306,6 +322,7 @@ const laptops = ref([
     }
   },
   {
+    id:31,
     photo: 'https://images.morele.net/i1064/13156048_0_i1064.jpg',
     title: 'Laptop Gigabyte AERO 15 OLED',
     description: 'Kreatywny laptop Gigabyte z ekranem OLED 4K i wydajnym procesorem Intel Core i7.',
@@ -325,6 +342,7 @@ const laptops = ref([
     }
   },
   {
+    id:32,
     photo: 'https://images.morele.net/i1064/13205251_1_i1064.jpg',
     title: 'Laptop Lenovo Yoga 9i 14"',
     description: 'Elegancki laptop Lenovo z obrotowym 14-calowym wyświetlaczem 4K i procesorem Intel Core i7.',
@@ -344,6 +362,7 @@ const laptops = ref([
     }
   },
   {
+    id:33,
     photo: 'https://images.morele.net/i1064/12993724_5_i1064.jpg',
     title: 'Laptop Micrsystemoft Surface Book 3',
     description: 'Innowacyjny laptop Micrsystemoft z wydajnym procesorem Intel Core i7 i modułem graficznym NVIDIA GeForce GTX.',

@@ -1,6 +1,6 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <q-header elevated class="text-white shadow-0" style="background: transparent; box-shadow: none">
+    <q-header elevated class="text-white shadow-0" style="background: transparent; box-shadow: none;">
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
         <q-toolbar-title class="text-white text-bold col-2">
@@ -133,7 +133,15 @@
           <q-item-label class="q-mt-sm">{{ item.title }}</q-item-label>
           <q-item-label><b>Cena:</b> {{ item.price }} zł</q-item-label>
         </div>
-        <q-item-label class="text-white"><b>Łączna suma:</b> {{ totalPrice }} zł</q-item-label>
+        <q-input v-model="couponCode" outlined placeholder="Wprowadź kod kuponu" dense class="q-my-md" style="color: white;"  />
+        <q-item-label class="text-white"><b>Łączna suma:</b>
+          {{
+            couponCode.toLowerCase() === 'biu' || couponCode.toLowerCase() === 'studia'
+              ? (totalPrice * 0.49).toFixed(2)
+              : totalPrice.toFixed(2)
+          }} zł
+        </q-item-label>
+
         <q-btn color="primary" class="q-mt-md" @click="proceedToCheckout">Przejdź do zapłaty</q-btn>
       </div>
       <div v-else class="q-pa-md text-white">
@@ -161,8 +169,9 @@ export default {
     const rightDrawerOpen = ref(false)
     const selectedItemId = ref(null)
     const search = ref('')
+    const couponCode = ref('');
     const { isAuthenticated } = storeToRefs(useUserStore())
-    const { card,totalPrice } = storeToRefs(shopStore())
+    const { card,cupons,totalPrice } = storeToRefs(shopStore())
     const { addItemToCard,removeItemFromCard} = shopStore()
     const router = useRouter()
 
@@ -190,6 +199,8 @@ export default {
       rightDrawerOpen.value = !rightDrawerOpen.value
     }
 
+
+
     const navigateToItem = () => {
       if (selectedItemId.value !== null) {
         router.push(`/item/${selectedItemId.value.id}`)
@@ -209,13 +220,15 @@ export default {
       isAuthenticated,
       filteredOptions,
       totalPrice,
+      addItemToCard,
+      removeItemFromCard,
+      cupons,
+      couponCode,
       filterFn,
       toggleLeftDrawer,
       toggleRightDrawer,
       navigateToItem,
       proceedToCheckout,
-      addItemToCard,
-      removeItemFromCard
     }
   }
 }

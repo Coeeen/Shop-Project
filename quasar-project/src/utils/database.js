@@ -20,7 +20,7 @@ const database = ref([
       {
         rating: 4.9,
         author: 'Mark Johnson',
-        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.'
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
       },
       {
         rating: 4.7,
@@ -43,7 +43,11 @@ const database = ref([
       outputs: '2x DisplayPort, 2x HDMI',
       power: '750W PSU recommended'
     },
-    comments: [
+    comments: [ {
+        rating: 2.9,
+        author: 'Krystian Jank',
+        text: 'Komentarz Hejterski.',
+      },
       {
         rating: 4.6,
         author: 'Peter Brown',
@@ -71,7 +75,11 @@ const database = ref([
       socket: 'LGA 1700',
       power: '125W TDP'
     },
-    comments: [
+    comments: [ {
+        rating: 2.9,
+        author: 'Krystian Jank',
+        text: 'Komentarz Hejterski.',
+      },
       {
         rating: 4.8,
         author: 'John Smith',
@@ -99,7 +107,11 @@ const database = ref([
       socket: 'AM4',
       power: '105W TDP'
     },
-    comments: [
+    comments: [ {
+        rating: 2.9,
+        author: 'Krystian Jank',
+        text: 'Komentarz Hejterski.',
+      },
       {
         rating: 4.6,
         author: 'Emma Davis',
@@ -126,7 +138,11 @@ const database = ref([
       writeSpeed: 'up to 3300 MB/s',
       formFactor: 'M.2 2280'
     },
-    comments: [
+    comments: [ {
+        rating: 2.9,
+        author: 'Krystian Jank',
+        text: 'Komentarz Hejterski.',
+      },
       {
         rating: 4.9,
         author: 'Emily Brown',
@@ -153,7 +169,11 @@ const database = ref([
       cache: '256 MB',
       formFactor: '3.5 inch'
     },
-    comments: [
+    comments: [ {
+        rating: 2.9,
+        author: 'Krystian Jank',
+        text: 'Komentarz Hejterski.',
+      },
       {
         rating: 4.5,
         author: 'Sophia Johnson',
@@ -743,7 +763,11 @@ const database = ref([
     description: 'Otwarty świat, akcja RPG osadzona w futurystycznym mieście Night City.',
     price: 199.99,
     buyers: 500,
-    comments: [
+    comments: [ {
+        rating: 2.9,
+        author: 'Krystian Jank',
+        text: 'Komentarz Hejterski.',
+      },
       {
         rating: 4.5,
         author: 'Adam Smith',
@@ -763,7 +787,11 @@ const database = ref([
     description: 'Epicka gra RPG osadzona w świecie mrocznych fantasy, stworzona przez CD Projekt RED.',
     price: 149.99,
     buyers: 600,
-    comments: [
+    comments: [ {
+        rating: 2.9,
+        author: 'Krystian Jank',
+        text: 'Komentarz Hejterski.',
+      },
       {
         rating: 4.9,
         author: 'Sophie Brown',
@@ -783,7 +811,11 @@ const database = ref([
     description: 'Klimatyczny western od Rockstar Games z otwartym światem i rozbudowaną fabułą.',
     price: 179.99,
     buyers: 550,
-    comments: [
+    comments: [ {
+        rating: 2.9,
+        author: 'Krystian Jank',
+        text: 'Komentarz Hejterski.',
+      },
       {
         rating: 4.8,
         author: 'Emily White',
@@ -803,7 +835,11 @@ const database = ref([
     description: 'Przygodowa gra akcji osadzona w mitologii nordyckiej, z dynamiczną walką i głęboką fabułą.',
     price: 199.99,
     buyers: 400,
-    comments: [
+    comments: [ {
+        rating: 2.9,
+        author: 'Krystian Jank',
+        text: 'Komentarz Hejterski.',
+      },
       {
         rating: 4.9,
         author: 'Laura Brown',
@@ -823,7 +859,11 @@ const database = ref([
     description: 'Gra akcji RPG, w której wcielasz się w wikinga podbijającego Anglię.',
     price: 159.99,
     buyers: 450,
-    comments: [
+    comments: [ {
+        rating: 2.9,
+        author: 'Krystian Jank',
+        text: 'Komentarz Hejterski.',
+      },
       {
         rating: 4.7,
         author: 'Jessica Green',
@@ -843,7 +883,11 @@ const database = ref([
     description: 'Postapokaliptyczna gra akcji z otwartym światem, pełnym tajemnic i mechanicznych stworzeń.',
     price: 139.99,
     buyers: 520,
-    comments: [
+    comments: [ {
+        rating: 2.9,
+        author: 'Krystian Jank',
+        text: 'Komentarz Hejterski.',
+      },
       {
         rating: 4.8,
         author: 'Sarah Black',
@@ -863,7 +907,11 @@ const database = ref([
     description: 'Przygodowa gra akcji osadzona w feudalnej Japonii, z piękną grafiką i głęboką fabułą.',
     price: 179.99,
     buyers: 480,
-    comments: [
+    comments: [ {
+        rating: 2.9,
+        author: 'Krystian Jank',
+        text: 'Komentarz Hejterski.',
+      },
       {
         rating: 4.9,
         author: 'Alex Brown',
@@ -883,7 +931,11 @@ const database = ref([
     description: 'Unikalna gra akcji stworzona przez Hideo Kojimę, z nietypową fabułą i mechaniką.',
     price: 199.99,
     buyers: 370,
-    comments: [
+    comments: [ {
+        rating: 2.9,
+        author: 'Krystian Jank',
+        text: 'Komentarz Hejterski.',
+      },
       {
         rating: 4.6,
         author: 'Oliver Black',
@@ -903,7 +955,11 @@ const database = ref([
     description: 'Dynamiczna strzelanka pierwszoosobowa z szybką akcją i intensywną walką.',
     price: 129.99,
     buyers: 490,
-    comments: [
+    comments: [ {
+        rating: 2.9,
+        author: 'Krystian Jank',
+        text: 'Komentarz Hejterski.',
+      },
       {
         rating: 4.7,
         author: 'Nathan Red',
@@ -923,7 +979,11 @@ const database = ref([
     description: 'Remake klasycznej gry RPG z nowoczesną grafiką i rozbudowaną fabułą.',
     price: 189.99,
     buyers: 430,
-    comments: [
+    comments: [ {
+        rating: 2.9,
+        author: 'Krystian Jank',
+        text: 'Komentarz Hejterski.',
+      },
       {
         rating: 4.8,
         author: 'Liam Green',

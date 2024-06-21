@@ -1,8 +1,10 @@
 <template>
   <q-card class="row col-12" style="background-color: #0D0D13;color: whitesmoke">
+    <router-link :to="{path:`/item/${item.id}`}">
     <q-card-section>
       <q-img :src="item.photo" alt="item Photo" class="item-photo" width="300px" height="200px" />
     </q-card-section>
+    </router-link>
 
     <q-card-section style="flex:1">
       <q-item-label class="text-h6 item-title q-mb-sm">{{ item.title }}</q-item-label>
@@ -47,6 +49,7 @@ const props = defineProps({
 });
 
 const item = ref(props.item);
+console.log(item.value)
 
 const addToCart = () => {
   addItemToCard(item.value);

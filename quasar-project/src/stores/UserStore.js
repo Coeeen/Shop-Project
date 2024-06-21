@@ -3,8 +3,10 @@ import { defineStore } from 'pinia';
 export const useUserStore = defineStore('userStore', {
   state: () => ({
     isAuthenticated: false,
-    users: [{email:"admin@gmail.com",password:"admin"}]
+    users: [{ email: "admin@gmail.com",firstName:'Krystian',lastName:'Jank', password: "admin" }],
   }),
+
+
 
   getters: {
     findUserByEmail: (state) => (email) => {
@@ -15,7 +17,27 @@ export const useUserStore = defineStore('userStore', {
   actions: {
     addUser(user) {
       this.users.push(user);
-      console.log(this.users)
     },
-  },
+    deleteUser(email) {
+      console.log(email)
+      console.log(this.users)
+      this.users = this.users.filter(user => user.email !== email);
+    },
+
+
+    async fetchRandomUsers() {
+      try {
+        const response = await fetch('https://randomuser.me/api/?results=10');
+        if (!response.ok) {
+          throw new Error('Nie działa ci net');
+        }
+        const data = await response.json();
+        return data.results;
+      } catch (error) {
+        console.error('Coś poszło nie tak', error);
+        return [];
+      }
+    }
+  }
 });
+
