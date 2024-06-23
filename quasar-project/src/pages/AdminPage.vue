@@ -24,14 +24,21 @@
       dark
       :rows-per-page-options="[10, 20, 30]"
     >
+      <template v-slot:body-cell-photo="props">
+        <q-td :props="props">
+          <q-avatar>
+            <q-img :src="props.row?.picture?.thumbnail ? props.row?.picture?.thumbnail :'https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg'" alt="user"/>
+          </q-avatar>
+        </q-td>
+      </template>
       <template v-slot:body-cell-akcje="props">
         <q-td :props="props">
           <div @click="deleteUser(props.row.email)" class="q-pa-xs bg-red inline-block row justify-center items-center text-center cursor-pointer" style="border-radius: 20px;width: 50px" ><q-icon name="delete" /></div>
         </q-td>
       </template>
-
-
     </q-table>
+
+
   </div>
 </template>
 
@@ -51,12 +58,14 @@ onBeforeMount(async () => {
   const fetchedUsers = await fetchRandomUsers()
   await fetchedUsers.forEach(user => {
     addUser({
+      picture: user.picture,
       email: user.email,
       password:'trudnehaslo123',
       firstName: user.name.first,
       lastName: user.name.last
     })
   })
+  console.log(users)
 })
 
 const columns = [
@@ -94,6 +103,14 @@ const columns = [
 ]
 
 const columnsUsers = [
+  {
+    name: 'photo',
+    required: true,
+    label: 'Photo',
+    align: 'left',
+    field: 'photo',
+    sortable: true
+  },
   {
     name: 'Email',
     required: true,

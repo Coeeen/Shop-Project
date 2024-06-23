@@ -16,7 +16,7 @@ const database = ref([
       outputs: '3x DisplayPort, 2x HDMI',
       power: '750W PSU required'
     },
-    comments: [
+    comment: [
       {
         rating: 4.9,
         author: 'Mark Johnson',
@@ -43,7 +43,7 @@ const database = ref([
       outputs: '2x DisplayPort, 2x HDMI',
       power: '750W PSU recommended'
     },
-    comments: [ {
+    comment: [ {
         rating: 2.9,
         author: 'Krystian Jank',
         text: 'Komentarz Hejterski.',
@@ -75,7 +75,7 @@ const database = ref([
       socket: 'LGA 1700',
       power: '125W TDP'
     },
-    comments: [ {
+    comment: [ {
         rating: 2.9,
         author: 'Krystian Jank',
         text: 'Komentarz Hejterski.',
@@ -107,7 +107,7 @@ const database = ref([
       socket: 'AM4',
       power: '105W TDP'
     },
-    comments: [ {
+    comment: [ {
         rating: 2.9,
         author: 'Krystian Jank',
         text: 'Komentarz Hejterski.',
@@ -138,7 +138,7 @@ const database = ref([
       writeSpeed: 'up to 3300 MB/s',
       formFactor: 'M.2 2280'
     },
-    comments: [ {
+    comment: [ {
         rating: 2.9,
         author: 'Krystian Jank',
         text: 'Komentarz Hejterski.',
@@ -169,7 +169,7 @@ const database = ref([
       cache: '256 MB',
       formFactor: '3.5 inch'
     },
-    comments: [ {
+    comment: [ {
         rating: 2.9,
         author: 'Krystian Jank',
         text: 'Komentarz Hejterski.',
@@ -193,11 +193,15 @@ const database = ref([
     description: 'Kompaktowy komputer Apple z procesorem M1, idealny do zadań biurowych i kreatywnych.',
     price: 4999.99,
     buyers: 80,
-    comment: {
+    comment: [{
       rating: 4.6,
       author: 'Sophie Brown',
       text: 'Bardzo wydajny i cichy. Świetny do pracy z wieloma aplikacjami jednocześnie.'
-    },
+    }, {
+      rating: 2.9,
+      author: 'Krystian Jank',
+      text: 'Komentarz Hejterski.',
+    },],
     specifications: {
       procesor: 'Apple M1',
       ram: '16 GB LPDDR4x',
@@ -212,11 +216,18 @@ const database = ref([
     description: 'Solidny komputer HP z procesorem Intel Core i5 i kartą graficzną NVIDIA GeForce GTX.',
     price: 5799.99,
     buyers: 95,
-    comment: {
-      rating: 4.3,
-      author: 'David White',
-      text: 'Dobrze się sprawuje w grach. Solidna konstrukcja.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i5-11400F',
       ram: '16 GB DDR4',
@@ -231,11 +242,18 @@ const database = ref([
     description: 'Uniwersalny komputer Dell z procesorem Intel Core i7 i wysoką wydajnością.',
     price: 6999.99,
     buyers: 110,
-    comment: {
-      rating: 4.7,
-      author: 'Emily Martinez',
-      text: 'Szybki i niezawodny. Dobrze sprawdza się do pracy biurowej.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i7-10700',
       ram: '16 GB DDR4',
@@ -250,11 +268,18 @@ const database = ref([
     description: 'Kompaktowy komputer Lenovo z procesorem Intel Core i5 i dużą ilością portów.',
     price: 5499.99,
     buyers: 85,
-    comment: {
-      rating: 4.5,
-      author: 'Noah Taylor',
-      text: 'Mały i wydajny. Idealny do biura.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i5-11400T',
       ram: '16 GB DDR4',
@@ -269,11 +294,18 @@ const database = ref([
     description: 'Wydajny komputer HP z procesorem Intel Core i7 i dużą ilością pamięci RAM.',
     price: 7999.99,
     buyers: 120,
-    comment: {
-      rating: 4.8,
-      author: 'Sophia Davis',
-      text: 'Szybki i solidny. Świetny do pracy z aplikacjami biurowymi.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i7-10700',
       ram: '32 GB DDR4',
@@ -288,11 +320,18 @@ const database = ref([
     description: 'Solidny komputer Dell z procesorem Intel Core i5 i dużą ilością pamięci masowej.',
     price: 6499.99,
     buyers: 100,
-    comment: {
-      rating: 4.7,
-      author: 'Daniel Johnson',
-      text: 'Stabilny i wydajny. Dobrze sprawdza się w pracy biurowej.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i5-10500',
       ram: '16 GB DDR4',
@@ -307,11 +346,18 @@ const database = ref([
     description: 'Potężny komputer ASUS z procesorem Intel Core i7 i kartą graficzną NVIDIA GeForce RTX.',
     price: 8999.99,
     buyers: 130,
-    comment: {
-      rating: 4.9,
-      author: 'Olivia Garcia',
-      text: 'Idealny do gier i wymagających zadań graficznych. Bardzo stabilny.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i7-11700KF',
       ram: '32 GB DDR4',
@@ -326,11 +372,18 @@ const database = ref([
     description: 'Praktyczny komputer Acer z procesorem Intel Core i5 i dużą pamięcią masową.',
     price: 5799.99,
     buyers: 95,
-    comment: {
-      rating: 4.3,
-      author: 'James Wilson',
-      text: 'Solidny i funkcjonalny. Dobrze sprawdza się w domowym biurze.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i5-10400',
       ram: '16 GB DDR4',
@@ -345,11 +398,18 @@ const database = ref([
     description: 'Potężny komputer Lenovo z procesorem AMD Ryzen i kartą graficzną NVIDIA GeForce GTX.',
     price: 7499.99,
     buyers: 110,
-    comment: {
-      rating: 4.7,
-      author: 'Sophia Garcia',
-      text: 'Idealny do gier. Szybki i stabilny.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'AMD Ryzen 7 5800',
       ram: '16 GB DDR4',
@@ -364,11 +424,18 @@ const database = ref([
     description: 'Wyjątkowy komputer MSI z procesorem Intel Core i7 i kartą graficzną NVIDIA GeForce GTX.',
     price: 8199.99,
     buyers: 120,
-    comment: {
-      rating: 4.9,
-      author: 'Daniel Miller',
-      text: 'Potężna maszyna. Bardzo wydajny i stabilny.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i7-10700',
       ram: '32 GB DDR4',
@@ -383,11 +450,18 @@ const database = ref([
     description: 'Najnowszy laptop Dell z procesorem Intel Core i7 i wyświetlaczem Full HD.',
     price: 5999.99,
     buyers: 120,
-    comment: {
-      rating: 4.5,
-      author: 'John Doe',
-      text: 'Bardzo szybki i elegancki laptop. Jestem zadowolony z zakupu!'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i7-1185G7',
       ram: '16 GB LPDDR4x',
@@ -403,11 +477,18 @@ const database = ref([
     description: 'Potężny laptop Apple z 16-calowym wyświetlaczem Retina i procesorem czterordzeniowym.',
     price: 8999.99,
     buyers: 150,
-    comment: {
-      rating: 5.0,
-      author: 'Jane Smith',
-      text: 'Fantastyczny laptop! Idealny do pracy graficznej.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Apple M1 Pro',
       ram: '32 GB LPDDR4x',
@@ -423,11 +504,18 @@ const database = ref([
     description: 'Elegancki laptop HP z obrotowym 14-calowym wyświetlaczem 4K i długim czasem pracy na baterii.',
     price: 8499.99,
     buyers: 90,
-    comment: {
-      rating: 4.0,
-      author: 'Sam Green',
-      text: 'Bardzo lekki i poręczny laptop. Ekran OLED robi wrażenie!'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i7-1165G7',
       ram: '16 GB DDR4',
@@ -443,11 +531,18 @@ const database = ref([
     description: 'Wyjątkowy laptop ASUS z wydajnym procesorem AMD Ryzen i dedykowaną kartą graficzną NVIDIA.',
     price: 7499.99,
     buyers: 110,
-    comment: {
-      rating: 4.2,
-      author: 'Michael Brown',
-      text: 'Świetny laptop do gier. Bardzo dobrze chłodzi się podczas długich sesji.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'AMD Ryzen 9 5900HS',
       ram: '16 GB DDR4',
@@ -463,11 +558,18 @@ const database = ref([
     description: 'Elegancki laptop Micrsystemoft z ekranem PixelSense i wydajnym procesorem Intel Core i5.',
     price: 6799.99,
     buyers: 95,
-    comment: {
-      rating: 4.7,
-      author: 'Emily Clark',
-      text: 'Bardzo lekki i poręczny. Ekran jest naprawdę systemtry i kolorowy.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i5-1135G7',
       ram: '8 GB LPDDR4x',
@@ -483,11 +585,18 @@ const database = ref([
     description: 'Potężny gamingowy laptop Acer z procesorem Intel Core i7 i kartą graficzną NVIDIA GeForce RTX 3060.',
     price: 8199.99,
     buyers: 130,
-    comment: {
-      rating: 4.9,
-      author: 'David Wilson',
-      text: 'Niesamowity laptop do gier. Bardzo wydajny i świetnie wygląda.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i7-11800H',
       ram: '16 GB DDR4',
@@ -503,11 +612,18 @@ const database = ref([
     description: 'Zaawansowany laptop Razer z procesorem Intel Core i7 i ekranem Full HD o wysokiej częstotliwości odświeżania.',
     price: 7899.99,
     buyers: 100,
-    comment: {
-      rating: 4.8,
-      author: 'Sophie Miller',
-      text: 'Bardzo szybki laptop, idealny do pracy i gier. Solidna konstrukcja.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i7-11800H',
       ram: '16 GB DDR4',
@@ -523,11 +639,18 @@ const database = ref([
     description: 'Zwinny laptop Samsung z obrotowym ekranem Super AMOLED i wydajnym procesorem Intel Core i7.',
     price: 6399.99,
     buyers: 85,
-    comment: {
-      rating: 4.3,
-      author: 'Olivia Taylor',
-      text: 'Ekran jest niesamowity. Bardzo praktyczny laptop do pracy.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i7-1165G7',
       ram: '16 GB LPDDR4x',
@@ -543,11 +666,18 @@ const database = ref([
     description: 'Elegancki laptop Huawei z wyświetlaczem 3K FullView i mocnym procesorem Intel Core i7.',
     price: 6699.99,
     buyers: 70,
-    comment: {
-      rating: 4.6,
-      author: 'William Brown',
-      text: 'Świetny laptop do pracy. Ekran jest naprawdę imponujący.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i7-1165G7',
       ram: '16 GB LPDDR4x',
@@ -563,11 +693,18 @@ const database = ref([
     description: 'Gamingowy laptop MSI z procesorem Intel Core i9 i kartą graficzną NVIDIA GeForce RTX 3080.',
     price: 8999.99,
     buyers: 120,
-    comment: {
-      rating: 4.9,
-      author: 'Daniel Johnson',
-      text: 'To jest bestia! Bardzo szybki i idealny do najnowszych gier.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i9-11900H',
       ram: '32 GB DDR4',
@@ -583,11 +720,18 @@ const database = ref([
     description: 'Potężny laptop gamingowy Lenovo z procesorem AMD Ryzen 7 i ekranem 16-calowym o wysokiej częstotliwości odświeżania.',
     price: 7799.99,
     buyers: 110,
-    comment: {
-      rating: 4.7,
-      author: 'Sophia Garcia',
-      text: 'Idealny laptop do gier. Bardzo dobrze wykonany.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'AMD Ryzen 7 5800H',
       ram: '16 GB DDR4',
@@ -603,11 +747,18 @@ const database = ref([
     description: 'Stylowy laptop ASUS z wydajnym procesorem Intel Core i5 i kolorowym wyświetlaczem NanoEdge.',
     price: 4999.99,
     buyers: 80,
-    comment: {
-      rating: 4.2,
-      author: 'Ella Davis',
-      text: 'Bardzo ładny wygląd z kolorowym ekranem. Solidna wydajność.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i5-1135G7',
       ram: '8 GB DDR4',
@@ -623,11 +774,18 @@ const database = ref([
     description: 'Praktyczny laptop Dell z procesorem Intel Core i5 i wygodną klawiaturą o podświetleniu LED.',
     price: 5699.99,
     buyers: 95,
-    comment: {
-      rating: 4.3,
-      author: 'James Wilson',
-      text: 'Bardzo solidny i funkcjonalny laptop do codziennego użytku.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i5-1135G7',
       ram: '12 GB DDR4',
@@ -643,11 +801,18 @@ const database = ref([
     description: 'Uniwersalny laptop HP z obrotowym 14-calowym wyświetlaczem Full HD i długim czasem pracy na baterii.',
     price: 5299.99,
     buyers: 75,
-    comment: {
-      rating: 4.0,
-      author: 'Lily Martin',
-      text: 'Bardzo poręczny laptop. Dobrze działa w trybie tabletu.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i5-1135G7',
       ram: '8 GB DDR4',
@@ -663,11 +828,18 @@ const database = ref([
     description: 'Lekki i smukły laptop Acer z procesorem Intel Core i7 i wygodnym wyświetlaczem Full HD IPS.',
     price: 5799.99,
     buyers: 85,
-    comment: {
-      rating: 4.5,
-      author: 'Noah Thompson',
-      text: 'Bardzo lekki i szybki laptop. Idealny do pracy mobilnej.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i7-1165G7',
       ram: '16 GB LPDDR4x',
@@ -683,11 +855,18 @@ const database = ref([
     description: 'Elegancki i lekki laptop MSI z procesorem Intel Core i7 i długim czasem pracy na baterii.',
     price: 5999.99,
     buyers: 90,
-    comment: {
-      rating: 4.8,
-      author: 'Mia Hall',
-      text: 'Bardzo elegancki i wydajny laptop. Idealny do pracy biurowej.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i7-1185G7',
       ram: '16 GB LPDDR4x',
@@ -703,11 +882,18 @@ const database = ref([
     description: 'Kreatywny laptop Gigabyte z ekranem OLED 4K i wydajnym procesorem Intel Core i7.',
     price: 7899.99,
     buyers: 100,
-    comment: {
-      rating: 4.9,
-      author: 'Jacob White',
-      text: 'Fantastyczny ekran OLED. Idealny dla grafików i projektantów.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i7-11800H',
       ram: '32 GB DDR4',
@@ -723,11 +909,18 @@ const database = ref([
     description: 'Elegancki laptop Lenovo z obrotowym 14-calowym wyświetlaczem 4K i procesorem Intel Core i7.',
     price: 7099.99,
     buyers: 105,
-    comment: {
-      rating: 4.6,
-      author: 'Benjamin Martinez',
-      text: 'Bardzo poręczny laptop. Ekran 4K robi świetne wrażenie.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i7-1185G7',
       ram: '16 GB LPDDR4x',
@@ -743,11 +936,18 @@ const database = ref([
     description: 'Innowacyjny laptop Micrsystemoft z wydajnym procesorem Intel Core i7 i modułem graficznym NVIDIA GeForce GTX.',
     price: 8399.99,
     buyers: 115,
-    comment: {
-      rating: 4.7,
-      author: 'Lucas Garcia',
-      text: 'Wspaniały laptop hybrydowy. Bardzo dobra jakość wykonania.'
-    },
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
     specifications: {
       procesor: 'Intel Core i7-1065G7',
       ram: '32 GB LPDDR4x',
@@ -763,7 +963,7 @@ const database = ref([
     description: 'Otwarty świat, akcja RPG osadzona w futurystycznym mieście Night City.',
     price: 199.99,
     buyers: 500,
-    comments: [ {
+    comment: [ {
         rating: 2.9,
         author: 'Krystian Jank',
         text: 'Komentarz Hejterski.',
@@ -781,13 +981,13 @@ const database = ref([
     ]
   },
   {
-    id:61,
+    id:52,
     photo: 'https://images.morele.net/i1064/game2.jpg',
     title: 'The Witcher 3: Wild Hunt',
     description: 'Epicka gra RPG osadzona w świecie mrocznych fantasy, stworzona przez CD Projekt RED.',
     price: 149.99,
     buyers: 600,
-    comments: [ {
+    comment: [ {
         rating: 2.9,
         author: 'Krystian Jank',
         text: 'Komentarz Hejterski.',
@@ -805,13 +1005,13 @@ const database = ref([
     ]
   },
   {
-    id:62,
+    id:53,
     photo: 'https://images.morele.net/i1064/game3.jpg',
     title: 'Red Dead Redemption 2',
     description: 'Klimatyczny western od Rockstar Games z otwartym światem i rozbudowaną fabułą.',
     price: 179.99,
     buyers: 550,
-    comments: [ {
+    comment: [ {
         rating: 2.9,
         author: 'Krystian Jank',
         text: 'Komentarz Hejterski.',
@@ -829,13 +1029,13 @@ const database = ref([
     ]
   },
   {
-    id:871,
+    id:54,
     photo: 'https://images.morele.net/i1064/game4.jpg',
     title: 'God of War',
     description: 'Przygodowa gra akcji osadzona w mitologii nordyckiej, z dynamiczną walką i głęboką fabułą.',
     price: 199.99,
     buyers: 400,
-    comments: [ {
+    comment: [ {
         rating: 2.9,
         author: 'Krystian Jank',
         text: 'Komentarz Hejterski.',
@@ -853,13 +1053,13 @@ const database = ref([
     ]
   },
   {
-    id:123,
+    id:55,
     photo: 'https://images.morele.net/i1064/game5.jpg',
     title: 'Assassin’s Creed Valhalla',
     description: 'Gra akcji RPG, w której wcielasz się w wikinga podbijającego Anglię.',
     price: 159.99,
     buyers: 450,
-    comments: [ {
+    comment: [ {
         rating: 2.9,
         author: 'Krystian Jank',
         text: 'Komentarz Hejterski.',
@@ -877,13 +1077,13 @@ const database = ref([
     ]
   },
   {
-    id:321,
+    id:56,
     photo: 'https://images.morele.net/i1064/game6.jpg',
     title: 'Horizon Zero Dawn',
     description: 'Postapokaliptyczna gra akcji z otwartym światem, pełnym tajemnic i mechanicznych stworzeń.',
     price: 139.99,
     buyers: 520,
-    comments: [ {
+    comment: [ {
         rating: 2.9,
         author: 'Krystian Jank',
         text: 'Komentarz Hejterski.',
@@ -901,13 +1101,13 @@ const database = ref([
     ]
   },
   {
-    id:1111,
+    id:57,
     photo: 'https://images.morele.net/i1064/game7.jpg',
     title: 'Ghost of Tsushima',
     description: 'Przygodowa gra akcji osadzona w feudalnej Japonii, z piękną grafiką i głęboką fabułą.',
     price: 179.99,
     buyers: 480,
-    comments: [ {
+    comment: [ {
         rating: 2.9,
         author: 'Krystian Jank',
         text: 'Komentarz Hejterski.',
@@ -925,13 +1125,13 @@ const database = ref([
     ]
   },
   {
-    id:90,
+    id:58,
     photo: 'https://images.morele.net/i1064/game8.jpg',
     title: 'Death Stranding',
     description: 'Unikalna gra akcji stworzona przez Hideo Kojimę, z nietypową fabułą i mechaniką.',
     price: 199.99,
     buyers: 370,
-    comments: [ {
+    comment: [ {
         rating: 2.9,
         author: 'Krystian Jank',
         text: 'Komentarz Hejterski.',
@@ -949,13 +1149,13 @@ const database = ref([
     ]
   },
   {
-    id:1121,
+    id:59,
     photo: 'https://images.morele.net/i1064/game9.jpg',
     title: 'Doom Eternal',
     description: 'Dynamiczna strzelanka pierwszoosobowa z szybką akcją i intensywną walką.',
     price: 129.99,
     buyers: 490,
-    comments: [ {
+    comment: [ {
         rating: 2.9,
         author: 'Krystian Jank',
         text: 'Komentarz Hejterski.',
@@ -973,13 +1173,13 @@ const database = ref([
     ]
   },
   {
-    id:81,
+    id:60,
     photo: 'https://images.morele.net/i1064/game10.jpg',
     title: 'Final Fantasy VII Remake',
     description: 'Remake klasycznej gry RPG z nowoczesną grafiką i rozbudowaną fabułą.',
     price: 189.99,
     buyers: 430,
-    comments: [ {
+    comment: [ {
         rating: 2.9,
         author: 'Krystian Jank',
         text: 'Komentarz Hejterski.',
@@ -995,6 +1195,141 @@ const database = ref([
         text: 'Piękna gra z wciągającą fabułą. Remake na najwyższym poziomie.'
       }
     ]
+  },
+  {
+    id: 1000,
+    photo: 'https://images.morele.net/i1064/phone1.jpg',
+    title: 'Apple iPhone 13 Pro',
+    description: 'Najnowszy iPhone z ekranem Super Retina XDR, A15 Bionic i potrójnym aparatem.',
+    price: 5899.99,
+    buyers: 120,
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
+    specifications: {
+      system: 'iOS 15',
+      ekran: '6.1 cala Super Retina XDR',
+      procesor: 'Apple A15 Bionic',
+      pamiec: '256 GB',
+      aparat: 'Potrójny 12 MP'
+    }
+  },
+  {
+    id: 1001,
+    photo: 'https://images.morele.net/i1064/phone2.jpg',
+    title: 'Samsung Galaxy S22 Ultra',
+    description: 'Flagowy model Samsunga z ekranem Dynamic AMOLED 2X, Exynos 2200 i rewolucyjnym aparatem.',
+    price: 6399.99,
+    buyers: 110,
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
+    specifications: {
+      system: 'Android 12',
+      ekran: '6.8 cala Dynamic AMOLED 2X',
+      procesor: 'Exynos 2200',
+      pamiec: '512 GB',
+      aparat: 'Quad 108 MP'
+    }
+  },
+  {
+    id: 1002,
+    photo: 'https://images.morele.net/i1064/phone3.jpg',
+    title: 'Xiaomi Mi 12 Pro',
+    description: 'Smartfon Xiaomi z ekranem AMOLED, Snapdragon 8 Gen 1 i potrójnym aparatem.',
+    price: 4599.99,
+    buyers: 95,
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
+    specifications: {
+      system: 'MIUI 14 (Android 12)',
+      ekran: '6.7 cala AMOLED',
+      procesor: 'Snapdragon 8 Gen 1',
+      pamiec: '256 GB',
+      aparat: 'Potrójny 50 MP'
+    }
+  },
+  {
+    id: 1003,
+    photo: 'https://images.morele.net/i1064/phone4.jpg',
+    title: 'OnePlus 10 Pro',
+    description: 'Flagowy smartfon OnePlus z ekranem Fluid AMOLED 2.0, Snapdragon 8 Gen 1 i potrójnym aparatem.',
+    price: 5099.99,
+    buyers: 100,
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
+    specifications: {
+      system: 'OxygenOS 13 (Android 12)',
+      ekran: '6.8 cala Fluid AMOLED 2.0',
+      procesor: 'Snapdragon 8 Gen 1',
+      pamiec: '256 GB',
+      aparat: 'Potrójny 48 MP'
+    }
+  },
+  {
+    id: 1004,
+    photo: 'https://images.morele.net/i1064/phone5.jpg',
+    title: 'Google Pixel 7 Pro',
+    description: 'Nowoczesny smartfon Google z ekranem OLED, Snapdragon 8 Gen 1 i potrójnym aparatem.',
+    price: 4799.99,
+    buyers: 90,
+    comment: [
+      {
+        rating: 4.9,
+        author: 'Mark Johnson',
+        text: 'Fantastyczna karta graficzna. Idealna do gier w 4K.',
+      },
+      {
+        rating: 4.7,
+        author: 'Anna Kowalska',
+        text: 'Świetna wydajność w grach. Cieszę się, że wybrałem ten model.'
+      }
+    ],
+    specifications: {
+      system: 'Android 12',
+      ekran: '6.5 cala OLED',
+      procesor: 'Snapdragon 8 Gen 1',
+      pamiec: '128 GB',
+      aparat: 'Potrójny 12 MP'
+    }
   }
 ]);
 

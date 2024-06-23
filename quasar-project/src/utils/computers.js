@@ -2,6 +2,7 @@ import { ref } from 'vue';
 
 const computers = ref([
   {
+    id: 5,
     photo: 'https://images.morele.net/i1064/13123312_0_i1064.jpg',
     title: 'Komputer stacjonarny Apple Mac Mini M1',
     description: 'Kompaktowy komputer Apple z procesorem M1, idealny do zadań biurowych i kreatywnych.',
@@ -20,6 +21,7 @@ const computers = ref([
     }
   },
   {
+    id: 6,
     photo: 'https://images.morele.net/i1064/13154494_0_i1064.jpg',
     title: 'Komputer stacjonarny HP Pavilion Gaming TG01',
     description: 'Solidny komputer HP z procesorem Intel Core i5 i kartą graficzną NVIDIA GeForce GTX.',
@@ -38,6 +40,7 @@ const computers = ref([
     }
   },
   {
+    id: 7,
     photo: 'https://images.morele.net/i1064/13186898_0_i1064.jpg',
     title: 'Komputer stacjonarny Dell Inspiron 3880',
     description: 'Uniwersalny komputer Dell z procesorem Intel Core i7 i wysoką wydajnością.',
@@ -56,6 +59,7 @@ const computers = ref([
     }
   },
   {
+    id: 8,
     photo: 'https://images.morele.net/i1064/13186899_0_i1064.jpg',
     title: 'Komputer stacjonarny Lenovo ThinkCentre M80q',
     description: 'Kompaktowy komputer Lenovo z procesorem Intel Core i5 i dużą ilością portów.',
@@ -74,6 +78,7 @@ const computers = ref([
     }
   },
   {
+    id: 9,
     photo: 'https://images.morele.net/i1064/13186898_0_i1064.jpg',
     title: 'Komputer stacjonarny HP EliteDesk 800 G6',
     description: 'Wydajny komputer HP z procesorem Intel Core i7 i dużą ilością pamięci RAM.',
@@ -92,6 +97,7 @@ const computers = ref([
     }
   },
   {
+    id: 10,
     photo: 'https://images.morele.net/i1064/13186900_0_i1064.jpg',
     title: 'Komputer stacjonarny Dell OptiPlex 7080',
     description: 'Solidny komputer Dell z procesorem Intel Core i5 i dużą ilością pamięci masowej.',
@@ -110,6 +116,7 @@ const computers = ref([
     }
   },
   {
+    id: 11,
     photo: 'https://images.morele.net/i1064/13213547_0_i1064.jpg',
     title: 'Komputer stacjonarny ASUS ROG Strix G15CK',
     description: 'Potężny komputer ASUS z procesorem Intel Core i7 i kartą graficzną NVIDIA GeForce RTX.',
@@ -128,6 +135,7 @@ const computers = ref([
     }
   },
   {
+    id: 12,
     photo: 'https://images.morele.net/i1064/13186900_0_i1064.jpg',
     title: 'Komputer stacjonarny Acer Aspire TC-895',
     description: 'Praktyczny komputer Acer z procesorem Intel Core i5 i dużą pamięcią masową.',
@@ -146,6 +154,7 @@ const computers = ref([
     }
   },
   {
+    id: 13,
     photo: 'https://images.morele.net/i1064/13186899_0_i1064.jpg',
     title: 'Komputer stacjonarny Lenovo Legion T5',
     description: 'Potężny komputer Lenovo z procesorem AMD Ryzen i kartą graficzną NVIDIA GeForce GTX.',
@@ -164,6 +173,7 @@ const computers = ref([
     }
   },
   {
+    id: 14,
     photo: 'https://images.morele.net/i1064/13154494_0_i1064.jpg',
     title: 'Komputer stacjonarny MSI Infinite S 10th',
     description: 'Wyjątkowy komputer MSI z procesorem Intel Core i7 i kartą graficzną NVIDIA GeForce GTX.',

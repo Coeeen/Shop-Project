@@ -2,6 +2,7 @@ import { ref } from 'vue';
 
 const smartphones = ref([
   {
+    id: 1000,
     photo: 'https://images.morele.net/i1064/phone1.jpg',
     title: 'Apple iPhone 13 Pro',
     description: 'Najnowszy iPhone z ekranem Super Retina XDR, A15 Bionic i potrójnym aparatem.',
@@ -21,6 +22,7 @@ const smartphones = ref([
     }
   },
   {
+    id: 1001,
     photo: 'https://images.morele.net/i1064/phone2.jpg',
     title: 'Samsung Galaxy S22 Ultra',
     description: 'Flagowy model Samsunga z ekranem Dynamic AMOLED 2X, Exynos 2200 i rewolucyjnym aparatem.',
@@ -40,6 +42,7 @@ const smartphones = ref([
     }
   },
   {
+    id: 1002,
     photo: 'https://images.morele.net/i1064/phone3.jpg',
     title: 'Xiaomi Mi 12 Pro',
     description: 'Smartfon Xiaomi z ekranem AMOLED, Snapdragon 8 Gen 1 i potrójnym aparatem.',
@@ -59,6 +62,7 @@ const smartphones = ref([
     }
   },
   {
+    id: 1003,
     photo: 'https://images.morele.net/i1064/phone4.jpg',
     title: 'OnePlus 10 Pro',
     description: 'Flagowy smartfon OnePlus z ekranem Fluid AMOLED 2.0, Snapdragon 8 Gen 1 i potrójnym aparatem.',
@@ -78,6 +82,7 @@ const smartphones = ref([
     }
   },
   {
+    id: 1004,
     photo: 'https://images.morele.net/i1064/phone5.jpg',
     title: 'Google Pixel 7 Pro',
     description: 'Nowoczesny smartfon Google z ekranem OLED, Snapdragon 8 Gen 1 i potrójnym aparatem.',

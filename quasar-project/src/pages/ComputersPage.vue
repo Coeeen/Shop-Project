@@ -95,6 +95,6 @@ watch(sortOption, () => {
 
 <style>
 .q-field__native, .q-field__prefix, .q-field__suffix, .q-field__input {
-  color: white !important;
+  color: black !important;
 }
 </style>

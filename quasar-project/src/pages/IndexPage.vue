@@ -9,7 +9,7 @@
         <h3>Twoje miejsce na unikalne urządzenia elektroniczne</h3>
 
       </div>
-      <div class="col-3 " >
+      <div class="col-3" v-if="$q.screen.width >= 768">
         <LottieAnimation
           :animation-data="Home"
           :auto-play="true"
@@ -106,6 +106,11 @@ defineOptions({
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+    }
+
+    @media (max-width: 1280px) {
+      font-size: 1rem;
+      margin: 0rem
     }
   }
 

@@ -6,14 +6,14 @@
           <h2 class="text-h5 text-white">Adres wysyłki</h2>
           <q-form @submit.prevent="nextStep('payment-method')">
             <div class="q-gutter-md">
-              <q-input v-model="shippingAddress.street" label="Ulica" outlined dense class="bg-white" :input-style="{color:'white'}"
-                       color="white" />
-              <q-input v-model="shippingAddress.city" label="Miasto" outlined dense class="bg-white" input-style="{color:'white'}"
-                       color="white"/>
-              <q-input v-model="shippingAddress.zipCode" label="Kod pocztowy" outlined dense class="bg-white" :input-style="{color:'white'}"
-                       color="white"/>
-              <q-input v-model="shippingAddress.country" label="Kraj" outlined dense class="bg-white" :input-style="{color:'white'}"
-                       color="white" />
+              <q-input v-model="shippingAddress.street" label="Ulica" outlined dense class="bg-white" :input-style="{color:'black'}"
+                       color="black" />
+              <q-input v-model="shippingAddress.city" label="Miasto" outlined dense class="bg-white" :input-style="{color:'black'}"
+                       color="black"/>
+              <q-input v-model="shippingAddress.zipCode" label="Kod pocztowy" outlined dense class="bg-white" :input-style="{color:'black'}"
+                       color="black"/>
+              <q-input v-model="shippingAddress.country" label="Kraj" outlined dense class="bg-white" :input-style="{color:'black'}"
+                       color="black" />
             </div>
             <div class="q-mt-md">
               <q-btn type="submit" color="primary" label="Dalej" />

@@ -2,6 +2,7 @@ import { ref } from 'vue';
 
 const games = ref([
   {
+    id: 51,
     photo: 'https://images.morele.net/i1064/game1.jpg',
     title: 'Cyberpunk 2077',
     description: 'Otwarty świat, akcja RPG osadzona w futurystycznym mieście Night City.',
@@ -21,6 +22,7 @@ const games = ref([
     ]
   },
   {
+    id: 52,
     photo: 'https://images.morele.net/i1064/game2.jpg',
     title: 'The Witcher 3: Wild Hunt',
     description: 'Epicka gra RPG osadzona w świecie mrocznych fantasy, stworzona przez CD Projekt RED.',
@@ -40,6 +42,7 @@ const games = ref([
     ]
   },
   {
+    id: 53,
     photo: 'https://images.morele.net/i1064/game3.jpg',
     title: 'Red Dead Redemption 2',
     description: 'Klimatyczny western od Rockstar Games z otwartym światem i rozbudowaną fabułą.',
@@ -59,6 +62,7 @@ const games = ref([
     ]
   },
   {
+    id: 54,
     photo: 'https://images.morele.net/i1064/game4.jpg',
     title: 'God of War',
     description: 'Przygodowa gra akcji osadzona w mitologii nordyckiej, z dynamiczną walką i głęboką fabułą.',
@@ -78,6 +82,7 @@ const games = ref([
     ]
   },
   {
+    id: 55,
     photo: 'https://images.morele.net/i1064/game5.jpg',
     title: 'Assassin’s Creed Valhalla',
     description: 'Gra akcji RPG, w której wcielasz się w wikinga podbijającego Anglię.',
@@ -97,6 +102,7 @@ const games = ref([
     ]
   },
   {
+    id: 56,
     photo: 'https://images.morele.net/i1064/game6.jpg',
     title: 'Horizon Zero Dawn',
     description: 'Postapokaliptyczna gra akcji z otwartym światem, pełnym tajemnic i mechanicznych stworzeń.',
@@ -116,6 +122,7 @@ const games = ref([
     ]
   },
   {
+    id: 57,
     photo: 'https://images.morele.net/i1064/game7.jpg',
     title: 'Ghost of Tsushima',
     description: 'Przygodowa gra akcji osadzona w feudalnej Japonii, z piękną grafiką i głęboką fabułą.',
@@ -135,6 +142,7 @@ const games = ref([
     ]
   },
   {
+    id: 58,
     photo: 'https://images.morele.net/i1064/game8.jpg',
     title: 'Death Stranding',
     description: 'Unikalna gra akcji stworzona przez Hideo Kojimę, z nietypową fabułą i mechaniką.',
@@ -154,6 +162,7 @@ const games = ref([
     ]
   },
   {
+    id: 59,
     photo: 'https://images.morele.net/i1064/game9.jpg',
     title: 'Doom Eternal',
     description: 'Dynamiczna strzelanka pierwszoosobowa z szybką akcją i intensywną walką.',
@@ -173,6 +182,7 @@ const games = ref([
     ]
   },
   {
+    id: 60,
     photo: 'https://images.morele.net/i1064/game10.jpg',
     title: 'Final Fantasy VII Remake',
     description: 'Remake klasycznej gry RPG z nowoczesną grafiką i rozbudowaną fabułą.',
