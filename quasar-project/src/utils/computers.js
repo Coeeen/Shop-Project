@@ -3,7 +3,7 @@ import { ref } from 'vue';
 const computers = ref([
   {
     id: 5,
-    photo: 'https://images.morele.net/i1064/13123312_0_i1064.jpg',
+    photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpAH-8ZIa9u3ZCbLCEBZV0_phyA2_wTfQ9qQ&s',
     title: 'Komputer stacjonarny Apple Mac Mini M1',
     description: 'Kompaktowy komputer Apple z procesorem M1, idealny do zadań biurowych i kreatywnych.',
     price: 4999.99,
@@ -22,7 +22,7 @@ const computers = ref([
   },
   {
     id: 6,
-    photo: 'https://images.morele.net/i1064/13154494_0_i1064.jpg',
+    photo: 'https://a.allegroimg.com/s1024/0c8039/878d95e049e980aca54d67af7e7e',
     title: 'Komputer stacjonarny HP Pavilion Gaming TG01',
     description: 'Solidny komputer HP z procesorem Intel Core i5 i kartą graficzną NVIDIA GeForce GTX.',
     price: 5799.99,
@@ -41,7 +41,7 @@ const computers = ref([
   },
   {
     id: 7,
-    photo: 'https://images.morele.net/i1064/13186898_0_i1064.jpg',
+    photo: 'https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/desktops/inspiron-desktops/inspiron-3880/global-spi/ng/desktop-inspiron-3880-mt-non-odd-relsize-500-ng.psd?fmt=jpg&wid=500&hei=500&fit=constrain%2C1&qlt=95',
     title: 'Komputer stacjonarny Dell Inspiron 3880',
     description: 'Uniwersalny komputer Dell z procesorem Intel Core i7 i wysoką wydajnością.',
     price: 6999.99,
@@ -60,7 +60,7 @@ const computers = ref([
   },
   {
     id: 8,
-    photo: 'https://images.morele.net/i1064/13186899_0_i1064.jpg',
+    photo: 'https://elenovo.pl/12034-thickbox_default/lenovo-thinkcentre-m80q-gen-3-intel-core-i5-12500t-16-gb-256gb-ssd-w11-p.jpg',
     title: 'Komputer stacjonarny Lenovo ThinkCentre M80q',
     description: 'Kompaktowy komputer Lenovo z procesorem Intel Core i5 i dużą ilością portów.',
     price: 5499.99,
@@ -117,7 +117,7 @@ const computers = ref([
   },
   {
     id: 11,
-    photo: 'https://images.morele.net/i1064/13213547_0_i1064.jpg',
+    photo: 'https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_106427597?x=536&y=402&format=jpg&quality=80&sp=yes&strip=yes&trim&ex=536&ey=402&align=center&resizesource&unsharp=1.5x1+0.7+0.02&cox=0&coy=0&cdx=536&cdy=402',
     title: 'Komputer stacjonarny ASUS ROG Strix G15CK',
     description: 'Potężny komputer ASUS z procesorem Intel Core i7 i kartą graficzną NVIDIA GeForce RTX.',
     price: 8999.99,
@@ -174,7 +174,7 @@ const computers = ref([
   },
   {
     id: 14,
-    photo: 'https://images.morele.net/i1064/13154494_0_i1064.jpg',
+    photo: 'https://f00.esfr.pl/foto/7/143065416657/f1c68fa513ae158fb22e918315978254/msi-pc-msi-14nue7667-i714-4070s-16g-1t-w11h,143065416657_3.jpg',
     title: 'Komputer stacjonarny MSI Infinite S 10th',
     description: 'Wyjątkowy komputer MSI z procesorem Intel Core i7 i kartą graficzną NVIDIA GeForce GTX.',
     price: 8199.99,

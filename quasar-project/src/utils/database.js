@@ -4,7 +4,7 @@ import { ref } from 'vue';
 const database = ref([
   {
     id:1,
-    photo: 'https://example.com/graphics-card1.jpg',
+    photo: 'https://allegro.stati.pl/AllegroIMG/PRODUCENCI/GIGABYTE/GV-N308TGAMING-OC-12GD/1-karta-graficzna-box.jpg',
     title: 'NVIDIA GeForce RTX 3080 Ti',
     description: 'Super wydajna karta graficzna do gamingu w 4K.',
     price: 2999.99,
@@ -31,7 +31,7 @@ const database = ref([
   },
   {
     id:2,
-    photo: 'https://example.com/graphics-card2.jpg',
+    photo: 'https://cdn.al.to/i/setup/images/prod/big/product-new-big,,2020/11/pr_2020_11_25_15_39_24_118_04.jpg',
     title: 'AMD Radeon RX 6800 XT',
     description: 'Potężna karta graficzna AMD dla entuzjastów gamingu.',
     price: 2499.99,
@@ -62,7 +62,7 @@ const database = ref([
   },
   {
     id:12345,
-    photo: 'https://example.com/processor1.jpg',
+    photo: 'https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big,,2021/12/pr_2021_12_23_9_45_10_282_00.jpg',
     title: 'Intel Core i9-12900K',
     description: 'Flagowy procesor Intel z serii Alder Lake dla wymagających użytkowników.',
     price: 699.99,
@@ -94,7 +94,7 @@ const database = ref([
   },
   {
     id:3,
-    photo: 'https://example.com/processor2.jpg',
+    photo: 'https://komputerymarkowe.pl/39787-large_default/procesor-amd-ryzen-7-5800x.jpg',
     title: 'AMD Ryzen 7 5800X',
     description: 'Wydajny procesor AMD dla entuzjastów gamingu i profesjonalistów.',
     price: 499.99,
@@ -126,7 +126,7 @@ const database = ref([
   },
   {
     id:4,
-    photo: 'https://example.com/hdd1.jpg',
+    photo: 'https://prod-api.mediaexpert.pl/api/images/gallery_500_500/thumbnails/images/17/1787845/SAMSUNG-970-Evo-Plus-1TB-bez-linku.jpg',
     title: 'Samsung 970 Evo Plus 1TB NVMe SSD',
     description: 'Szybki i niezawodny dysk SSD NVMe dla profesjonalistów.',
     price: 299.99,
@@ -157,7 +157,7 @@ const database = ref([
   },
   {
     id:5,
-    photo: 'https://example.com/hdd2.jpg',
+    photo: 'https://images.merstatic.com/imgcache/resized/images/offer/2024/05/15/597290_6644b1dea261c.jpeg',
     title: 'Western Digital WD Blue 2TB HDD',
     description: 'Pojemny i niezawodny dysk HDD dla użytkowników domowych.',
     price: 149.99,
@@ -958,7 +958,7 @@ const database = ref([
   },
   {
     id:51,
-    photo: 'https://images.morele.net/i1064/game1.jpg',
+    photo: 'https://ocdn.eu/sport-images-transforms/1/xlfk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy8xYjY3M2M5OTJlYjE3NWY2YTI3NTNjODRjYjE4MjNmNy5qcGeTlQMAAM0HgM0EOJUCzQSwAMLDkwmmNDQwNjBhBt4AAqEwAaExAQ/cyberpunk-2077.jpg',
     title: 'Cyberpunk 2077',
     description: 'Otwarty świat, akcja RPG osadzona w futurystycznym mieście Night City.',
     price: 199.99,
@@ -982,7 +982,7 @@ const database = ref([
   },
   {
     id:52,
-    photo: 'https://images.morele.net/i1064/game2.jpg',
+    photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4e17krUMGAfE22wZAowU6mZCF-8KOXn1esw&s',
     title: 'The Witcher 3: Wild Hunt',
     description: 'Epicka gra RPG osadzona w świecie mrocznych fantasy, stworzona przez CD Projekt RED.',
     price: 149.99,
@@ -1198,7 +1198,7 @@ const database = ref([
   },
   {
     id: 1000,
-    photo: 'https://images.morele.net/i1064/phone1.jpg',
+    photo: 'https://i.ebayimg.com/images/g/KLMAAOSwpbFhQtkr/s-l1200.webp',
     title: 'Apple iPhone 13 Pro',
     description: 'Najnowszy iPhone z ekranem Super Retina XDR, A15 Bionic i potrójnym aparatem.',
     price: 5899.99,
@@ -1225,7 +1225,7 @@ const database = ref([
   },
   {
     id: 1001,
-    photo: 'https://images.morele.net/i1064/phone2.jpg',
+    photo: 'https://www.tradeinn.com/f/13913/139131173_4/samsung-galaxy-s22-ultra-5g-enterprise-edition-8gb-128gb-6.8-dual-sim.jpg',
     title: 'Samsung Galaxy S22 Ultra',
     description: 'Flagowy model Samsunga z ekranem Dynamic AMOLED 2X, Exynos 2200 i rewolucyjnym aparatem.',
     price: 6399.99,
@@ -1252,7 +1252,7 @@ const database = ref([
   },
   {
     id: 1002,
-    photo: 'https://images.morele.net/i1064/phone3.jpg',
+    photo: 'https://i02.appmifile.com/433_operator_sg/20/03/2023/f83b78c002f27b9dd40c646d671c3fd3.png',
     title: 'Xiaomi Mi 12 Pro',
     description: 'Smartfon Xiaomi z ekranem AMOLED, Snapdragon 8 Gen 1 i potrójnym aparatem.',
     price: 4599.99,
@@ -1279,7 +1279,7 @@ const database = ref([
   },
   {
     id: 1003,
-    photo: 'https://images.morele.net/i1064/phone4.jpg',
+    photo: 'https://www.tabletowo.pl/wp-content/uploads/2021/11/OnePlus-10-Pro-render-zrodlo-@OnLeaks-@ZoutonUS-3.jpg',
     title: 'OnePlus 10 Pro',
     description: 'Flagowy smartfon OnePlus z ekranem Fluid AMOLED 2.0, Snapdragon 8 Gen 1 i potrójnym aparatem.',
     price: 5099.99,
@@ -1306,7 +1306,7 @@ const database = ref([
   },
   {
     id: 1004,
-    photo: 'https://images.morele.net/i1064/phone5.jpg',
+    photo: 'https://static.pepper.pl/threads/raw/zYX7g/790949_1/re/1024x1024/qt/60/790949_1.jpg',
     title: 'Google Pixel 7 Pro',
     description: 'Nowoczesny smartfon Google z ekranem OLED, Snapdragon 8 Gen 1 i potrójnym aparatem.',
     price: 4799.99,
@@ -1331,6 +1331,7 @@ const database = ref([
       aparat: 'Potrójny 12 MP'
     }
   }
+
 ]);
 
 

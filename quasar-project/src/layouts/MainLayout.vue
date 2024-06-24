@@ -40,7 +40,7 @@
           <router-link to="/login" class="text-dark" style="text-decoration: none">
             <q-toolbar-title class="text-white cursor-pointer" style="font-size: 12px;">
               <q-icon name="person" size="32px" />
-               Zaloguj się
+              Zaloguj się
             </q-toolbar-title>
           </router-link>
           <router-link to="/register" class="text-dark" style="text-decoration: none">
@@ -57,7 +57,7 @@
     <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered  style="background-color: #1E222A">
       <q-list class="q-pa-md q-gutter-lg q-mt-xl flex flex-center" >
         <router-link to="/" class="full-width text-dark" style="text-decoration: none">
-          <q-item clickable v-ripple style="width: 100%;color: white">
+          <q-item clickable v-ripple :class="{ 'active': activeLink === '/' }" style="width: 100%;color: white">
             <q-item-section avatar>
               <q-icon name="home" />
             </q-item-section>
@@ -67,7 +67,7 @@
           </q-item>
         </router-link>
         <router-link to="/laptops" class="full-width text-dark" style="text-decoration: none">
-          <q-item clickable v-ripple style="width: 100%;color: white">
+          <q-item clickable v-ripple :class="{ 'active': activeLink === '/laptops' }" style="width: 100%;color: white">
             <q-item-section avatar>
               <q-icon name="laptop" />
             </q-item-section>
@@ -77,7 +77,7 @@
           </q-item>
         </router-link>
         <router-link to="/computers" class="full-width text-dark" style="text-decoration: none">
-          <q-item clickable v-ripple style="width: 100%;color: white">
+          <q-item clickable v-ripple :class="{ 'active': activeLink === '/computers' }" style="width: 100%;color: white">
             <q-item-section avatar>
               <q-icon name="desktop_windows" />
             </q-item-section>
@@ -87,7 +87,7 @@
           </q-item>
         </router-link>
         <router-link to="/components" class="full-width text-dark" style="text-decoration: none">
-          <q-item clickable v-ripple style="width: 100%;color: white">
+          <q-item clickable v-ripple :class="{ 'active': activeLink === '/components' }" style="width: 100%;color: white">
             <q-item-section avatar>
               <q-icon name="memory" />
             </q-item-section>
@@ -97,7 +97,7 @@
           </q-item>
         </router-link>
         <router-link to="/smartphones" class="full-width text-dark" style="text-decoration: none">
-          <q-item clickable v-ripple style="width: 100%;color: white">
+          <q-item clickable v-ripple :class="{ 'active': activeLink === '/smartphones' }" style="width: 100%;color: white">
             <q-item-section avatar>
               <q-icon name="smartphone" />
             </q-item-section>
@@ -107,7 +107,7 @@
           </q-item>
         </router-link>
         <router-link to="/games" class="full-width text-dark" style="text-decoration: none">
-          <q-item clickable v-ripple style="width: 100%;color: white">
+          <q-item clickable v-ripple :class="{ 'active': activeLink === '/games' }" style="width: 100%;color: white">
             <q-item-section avatar>
               <q-icon name="sports_esports" />
             </q-item-section>
@@ -156,12 +156,12 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { useUserStore } from 'src/stores/UserStore'
 import { shopStore } from 'src/stores/ShopStore'
 import { storeToRefs } from 'pinia'
 import database from 'src/utils/database'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 
 export default {
   setup() {
@@ -171,15 +171,16 @@ export default {
     const search = ref('')
     const couponCode = ref('');
     const { isAuthenticated } = storeToRefs(useUserStore())
-    const { card,cupons,totalPrice } = storeToRefs(shopStore())
-    const { addItemToCard,removeItemFromCard} = shopStore()
+    const { card, cupons, totalPrice } = storeToRefs(shopStore())
+    const { addItemToCard, removeItemFromCard } = shopStore()
     const router = useRouter()
+    const route = useRoute()
+    const activeLink = ref(route.path)
 
     const filterFn = (val, update) => {
       search.value = val
       update()
     }
-
 
     const filteredOptions = computed(() => {
       if (!search.value.trim()) {
@@ -199,8 +200,6 @@ export default {
       rightDrawerOpen.value = !rightDrawerOpen.value
     }
 
-
-
     const navigateToItem = () => {
       if (selectedItemId.value !== null) {
         router.push(`/item/${selectedItemId.value.id}`)
@@ -210,6 +209,10 @@ export default {
     const proceedToCheckout = () => {
       router.push('/checkout');
     };
+
+    watch(route, (newRoute) => {
+      activeLink.value = newRoute.path
+    })
 
     return {
       card,
@@ -229,11 +232,16 @@ export default {
       toggleRightDrawer,
       navigateToItem,
       proceedToCheckout,
+      activeLink,
     }
   }
 }
 </script>
 
 <style scoped>
-
+.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  color: #3988D6 !important;
+}
 </style>

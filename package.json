@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "chart.js": "^4.4.3",
+    "install": "^0.13.0",
+    "npm": "^10.8.1",
+    "vue-chartjs": "^5.3.1"
+  }
+}

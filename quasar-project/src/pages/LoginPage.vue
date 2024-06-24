@@ -17,16 +17,16 @@
       <div class="column q-col-gutter-lg justify-center" style="margin-top: 5px">
         <div class="col-12 col-md-6">
           <label class="text-white">Email:</label>
-          <q-input v-model="email" id="email" type="email" color="white" outlined dense class="bg-white text-dark" :input-style="{color:'black'}" />
+          <q-input v-model="email" id="email" hint="Formikowy hint do maila" maxlength="15" type="email" color="white" outlined dense class="bg-white text-dark" :input-style="{color:'black'}" />
         </div>
         <div class="col-12 col-md-6">
           <label class="text-white">Hasło:</label>
-          <q-input v-model="password" id="password" type="password" color="white" outlined dense class="bg-white text-dark" :input-style="{color:'black'}" />
+          <q-input v-model="password" id="password" type="password" hint="Formikowy hint do hasła" maxlength="15" color="white" outlined dense class="bg-white text-dark" :input-style="{color:'black'}" />
         </div>
       </div>
 
       <div class="row col-12 justify-center items-center q-mt-md">
-        <q-btn type="submit" color="primary" label="Zaloguj" class="q-mt-md" />
+        <ButtonDefault text="ZALOGUJ" />
       </div>
     </form>
   </div>
@@ -40,6 +40,7 @@ import { useQuasar } from 'quasar';
 import { LottieAnimation } from 'lottie-web-vue';
 import login from '../assets/svg/Login.json';
 import {storeToRefs} from "pinia";
+import ButtonDefault from "components/ButtonDefault.vue";
 
 const { findUserByEmail,  } = useUserStore();
 const {isAuthenticated,users} =storeToRefs(useUserStore())
@@ -112,6 +113,11 @@ const clearForm = () => {
 </script>
 
 <style scoped lang="scss">
+:deep(.q-field--dense .q-field__bottom ) {
+  background-color: #14141E;
+  color: white;
+}
+
 .title {
   font-size: 3.2rem;
   margin: 0;
@@ -119,7 +125,6 @@ const clearForm = () => {
   letter-spacing: 2px;
   background: linear-gradient(to right, #ff3d9d, #8bbfdb);
   -webkit-background-clip: text;
-  background-clip: inset 0 0 10px rgba(0, 0, 0, 1);
   color: transparent;
   text-align: center;
 }
@@ -139,5 +144,8 @@ const clearForm = () => {
 
 .text-dark {
   color: #333333;
+}
+.q-field__native, .q-field__prefix, .q-field__suffix, .q-field__input {
+  color: black !important;
 }
 </style>

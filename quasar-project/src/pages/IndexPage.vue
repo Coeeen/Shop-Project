@@ -64,7 +64,6 @@
 
 <script setup>
 import "../css/app.scss"
-import { defineOptions } from 'vue'
 import Home from "assets/svg/Home.json";
 import {LottieAnimation} from "lottie-web-vue";
 

@@ -47,16 +47,26 @@
         </div>
       </q-step>
     </q-stepper>
+    <div class="q-mt-xl">
+      <div class="text-h6 text-white text-bold">Podczas wypełniania podczytaj ciekawoski o kotach</div>
+    <div v-for="text in data" :key="text._id" class="q-mt-sm">
+    <div class="text-white text-subtitle1">{{text.text}}</div>
+    </div>
+    </div>
   </q-page>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import {onMounted, ref} from 'vue';
 import { useRouter } from 'vue-router';
 import { useQuasar } from 'quasar';
 import { shopStore } from "src/stores/ShopStore"
+import { useUserStore } from "src/stores/UserStore"
 import {storeToRefs} from "pinia";
 const { card } = storeToRefs(shopStore())
+const { data } = storeToRefs(useUserStore())
+const { randomFactsAbautCat } = useUserStore()
+
 
 const $q = useQuasar();
 const router = useRouter();
@@ -112,6 +122,11 @@ const validateForm = () => {
 
   return true;
 };
+
+onMounted(async ()=> {
+   await randomFactsAbautCat()
+  console.log(data)
+})
 </script>
 
 <style scoped lang="scss">

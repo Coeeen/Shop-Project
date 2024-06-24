@@ -4,6 +4,7 @@ export const useUserStore = defineStore('userStore', {
   state: () => ({
     isAuthenticated: false,
     users: [{ email: "admin@gmail.com",firstName:'Krystian',lastName:'Jank', password: "admin" }],
+    data:[]
   }),
 
 
@@ -33,6 +34,19 @@ export const useUserStore = defineStore('userStore', {
         }
         const data = await response.json();
         return data.results;
+      } catch (error) {
+        console.error('Coś poszło nie tak', error);
+        return [];
+      }
+    },
+
+    async randomFactsAbautCat() {
+      try {
+        const response = await fetch('https://cat-fact.herokuapp.com/facts');
+        if (!response.ok) {
+          throw new Error('Nie działa ci net');
+        }
+         this.data = await response.json();
       } catch (error) {
         console.error('Coś poszło nie tak', error);
         return [];

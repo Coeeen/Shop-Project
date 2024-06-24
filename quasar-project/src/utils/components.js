@@ -3,7 +3,8 @@ import { ref } from 'vue';
 
 const components = ref([
   {
-    photo: 'https://example.com/graphics-card1.jpg',
+    id:1,
+    photo: 'https://allegro.stati.pl/AllegroIMG/PRODUCENCI/GIGABYTE/GV-N308TGAMING-OC-12GD/1-karta-graficzna-box.jpg',
     title: 'NVIDIA GeForce RTX 3080 Ti',
     description: 'Super wydajna karta graficzna do gamingu w 4K.',
     price: 2999.99,
@@ -29,7 +30,8 @@ const components = ref([
     ]
   },
   {
-    photo: 'https://example.com/graphics-card2.jpg',
+    id:2,
+    photo: 'https://cdn.al.to/i/setup/images/prod/big/product-new-big,,2020/11/pr_2020_11_25_15_39_24_118_04.jpg',
     title: 'AMD Radeon RX 6800 XT',
     description: 'Potężna karta graficzna AMD dla entuzjastów gamingu.',
     price: 2499.99,
@@ -55,7 +57,8 @@ const components = ref([
     ]
   },
   {
-    photo: 'https://example.com/processor1.jpg',
+    id:12345,
+    photo: 'https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big,,2021/12/pr_2021_12_23_9_45_10_282_00.jpg',
     title: 'Intel Core i9-12900K',
     description: 'Flagowy procesor Intel z serii Alder Lake dla wymagających użytkowników.',
     price: 699.99,
@@ -82,7 +85,8 @@ const components = ref([
     ]
   },
   {
-    photo: 'https://example.com/processor2.jpg',
+    id:3,
+    photo: 'https://komputerymarkowe.pl/39787-large_default/procesor-amd-ryzen-7-5800x.jpg',
     title: 'AMD Ryzen 7 5800X',
     description: 'Wydajny procesor AMD dla entuzjastów gamingu i profesjonalistów.',
     price: 499.99,
@@ -109,7 +113,8 @@ const components = ref([
     ],
   },
   {
-    photo: 'https://example.com/hdd1.jpg',
+    id:4,
+    photo: 'https://prod-api.mediaexpert.pl/api/images/gallery_500_500/thumbnails/images/17/1787845/SAMSUNG-970-Evo-Plus-1TB-bez-linku.jpg',
     title: 'Samsung 970 Evo Plus 1TB NVMe SSD',
     description: 'Szybki i niezawodny dysk SSD NVMe dla profesjonalistów.',
     price: 299.99,
@@ -135,7 +140,8 @@ const components = ref([
     ]
   },
   {
-    photo: 'https://example.com/hdd2.jpg',
+    id:5,
+    photo: 'https://images.merstatic.com/imgcache/resized/images/offer/2024/05/15/597290_6644b1dea261c.jpeg',
     title: 'Western Digital WD Blue 2TB HDD',
     description: 'Pojemny i niezawodny dysk HDD dla użytkowników domowych.',
     price: 149.99,

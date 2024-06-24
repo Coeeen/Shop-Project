@@ -17,25 +17,25 @@
       <div class="row q-col-gutter-lg justify-center">
         <div class="col-md-4">
           <label class="text-white">Imię:</label>
-          <q-input v-model="firstName" maxlength="20" id="firstName" type="text" outlined dense color="white" class="bg-white " :input-style="{color:'black'}"/>
+          <q-input v-model="firstName" maxlength="20" id="firstName" hint="Formikowy hint do imienia" type="text" outlined dense color="white" class="bg-white " :input-style="{color:'black'}"/>
         </div>
         <div class="col-md-4">
           <label class="text-white">Nazwisko:</label>
-          <q-input class="bg-white text-dark" v-model="lastName" maxlength="20" id="lastName" type="text" color="white" outlined dense borderless :input-style="{color:'black'}" />
+          <q-input class="bg-white text-dark" v-model="lastName" hint="Formikowy hint do nazwiska" maxlength="20" id="lastName" type="text" color="white" outlined dense borderless :input-style="{color:'black'}" />
         </div>
       </div>
       <div class="row q-col-gutter-lg justify-center" style="margin-top: 5px">
         <div class="col-md-4">
           <label class="text-white">Email:</label>
-          <q-input v-model="email" id="email" color="white" outlined dense class="bg-white text-dark" :input-style="{color:'black'}" />
+          <q-input v-model="email" id="email" color="white" hint="Formikowy hint do hasła" outlined dense class="bg-white text-dark" :input-style="{color:'black'}" />
         </div>
         <div class="col-md-4">
           <label class="text-white">Hasło:</label>
-          <q-input v-model="password" id="password" type="password" color="white" outlined dense class="bg-white text-dark" :input-style="{color:'black'}" />
+          <q-input v-model="password" id="password" hint="Formikowy hint do hasła" type="password" color="white" outlined dense class="bg-white text-dark" :input-style="{color:'black'}" />
         </div>
       </div>
       <div class="row col-12 justify-center items-center q-mt-md">
-        <q-btn type="submit" color="primary" label="Utwórz konto" class="q-mt-md" />
+        <ButtonDefault text="Utwórz konto" />
       </div>
     </form>
   </div>
@@ -48,6 +48,7 @@ import { useUserStore } from 'src/stores/UserStore';
 import { useQuasar } from 'quasar';
 import { LottieAnimation } from 'lottie-web-vue';
 import register from '../assets/svg/Register.json';
+import ButtonDefault from "components/ButtonDefault.vue";
 
 const { addUser, findUserByEmail } = useUserStore();
 const $q = useQuasar();
@@ -125,6 +126,10 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
+:deep(.q-field--dense .q-field__bottom ) {
+  background-color: #14141E;
+  color: white;
+}
 .title {
   font-size: 3.6rem;
   margin: 0;

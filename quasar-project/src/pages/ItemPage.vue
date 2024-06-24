@@ -36,12 +36,12 @@
       </div>
 
       <div class="card" style="max-width: 800px">
-        <div class="text-h4 q-mb-md">Rekomendacje od naszych użytkowników</div>
-        <Splide :options="splideOptions">
-          <SplideSlide v-for="(data, index) in recommendedItems" :key="index">
+        <div class="text-h4 q-mb-xl">Rekomendacje od naszych użytkowników</div>
+        <Splide :options="splideOptions" >
+          <SplideSlide v-for="(data, index) in recommendedItems" :key="index" class="q-px-md text-center">
             <router-link :to="`/item/${data.id}`">
-              <img :src="data.photo" :alt="data.title" class="splide-image" />
-              <div class="splide-title">{{ data.title }}</div>
+              <img :src="data.photo" :alt="data.title" class="splide-image"/>
+              <div class="text-white text-bold text-subtitle1">{{ data.title }}</div>
             </router-link>
           </SplideSlide>
         </Splide>
@@ -137,7 +137,7 @@ const addComment = () => {
 const recommendedItems = ref([
   {
     id: 1,
-    photo: 'https://example.com/graphics-card1.jpg',
+    photo: 'https://allegro.stati.pl/AllegroIMG/PRODUCENCI/GIGABYTE/GV-N308TGAMING-OC-12GD/1-karta-graficzna-box.jpg',
     title: 'NVIDIA GeForce RTX 3080 Ti',
     description: 'Super wydajna karta graficzna do gamingu w 4K.',
     price: 2999.99,
@@ -163,8 +163,28 @@ const recommendedItems = ref([
     ],
   },
   {
+    id: 51,
+    photo: 'https://ocdn.eu/sport-images-transforms/1/xlfk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy8xYjY3M2M5OTJlYjE3NWY2YTI3NTNjODRjYjE4MjNmNy5qcGeTlQMAAM0HgM0EOJUCzQSwAMLDkwmmNDQwNjBhBt4AAqEwAaExAQ/cyberpunk-2077.jpg',
+    title: 'Cyberpunk 2077',
+    description: 'Otwarty świat, akcja RPG osadzona w futurystycznym mieście Night City.',
+    price: 199.99,
+    buyers: 500,
+    comments: [
+      {
+        rating: 4.5,
+        author: 'Adam Smith',
+        text: 'Gra ma niesamowity klimat i głęboką fabułę. Polecam każdemu fanowi RPG.'
+      },
+      {
+        rating: 4.8,
+        author: 'Eve Johnson',
+        text: 'Świetna gra, chociaż wymaga mocnego sprzętu. Grafika jest oszałamiająca.'
+      }
+    ]
+  },
+  {
     id: 1002,
-    photo: 'https://images.morele.net/i1064/phone3.jpg',
+    photo: 'https://www.tabletowo.pl/wp-content/uploads/2021/11/OnePlus-10-Pro-render-zrodlo-@OnLeaks-@ZoutonUS-3.jpg',
     title: 'Xiaomi Mi 12 Pro',
     description: 'Smartfon Xiaomi z ekranem AMOLED, Snapdragon 8 Gen 1 i potrójnym aparatem.',
     price: 4599.99,
@@ -191,7 +211,7 @@ const recommendedItems = ref([
   },
   {
     id: 52,
-    photo: 'https://images.morele.net/i1064/game2.jpg',
+    photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4e17krUMGAfE22wZAowU6mZCF-8KOXn1esw&s',
     title: 'The Witcher 3: Wild Hunt',
     description: 'Epicka gra RPG osadzona w świecie mrocznych fantasy, stworzona przez CD Projekt RED.',
     price: 149.99,
@@ -300,7 +320,7 @@ const recommendedItems = ref([
 }
 
 .splide-image {
-  width: 100%;
+  width: 150px;
   height: auto;
   border-radius: 10px;
   cursor: pointer;
