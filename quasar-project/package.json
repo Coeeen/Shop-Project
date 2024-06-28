@@ -13,12 +13,14 @@
     "build": "quasar build"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "@quasar/extras": "^1.16.4",
     "@splidejs/vue-splide": "^0.6.12",
     "@types/chart.js": "^2.9.41",
     "axios": "^1.2.1",
     "chart.js": "^4.4.3",
     "chartjs-adapter-date-fns": "^3.0.0",
+    "emailjs-com": "^3.2.0",
     "formik": "^2.4.6",
     "lottie-vuejs": "^0.4.0",
     "lottie-web": "^5.12.2",

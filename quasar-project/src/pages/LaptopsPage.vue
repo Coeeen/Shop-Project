@@ -2,10 +2,10 @@
   <div class="row col-12 q-px-md">
     <div class="row col-11 q-mt-md q-ml-sm justify-between items-center">
       <div class="row col-12 q-my-md">
-        <q-input v-model="searchQuery" color="white" placeholder="Szukaj..." filled dense outlined class="q-mb-sm col-xl-3 col-xs-4" :input-style="{color:'white'}"/>
-        <q-input v-model.number="priceQuery" color="white" type="number" placeholder="Cena maksymalna" filled dense outlined class="q-mb-sm col-xl-3 col-xs-4 q-ml-sm" :input-style="{color:'white'}"/>
-        <q-select v-model="sortOption" color="dark" label="Sortowanie" filled :options="options" placeholder="Sortuj po" dense outlined class="text-color q-mb-sm col-xl-3 col-xs-7 q-ml-sm" label-color="white" style="color: white" standout="text-white"/>
-        <q-btn color="negative" label="Wyczyść filtry" @click="clearFilters" dense flat class="q-mb-sm col-xl-2 col-xs-3 q-ml-sm" />
+        <q-input v-model="searchQuery" color="white" placeholder="Szukaj..." filled dense outlined class="q-mb-sm col-xl-2 col-md-2 col-xs-4" :input-style="{color:'white'}"/>
+        <q-input v-model.number="priceQuery" color="white" type="number" placeholder="Cena maksymalna" filled dense outlined class="q-mb-sm col-xl-2 col-md-2 col-xs-4 q-ml-sm" :input-style="{color:'white'}"/>
+        <q-select v-model="sortOption" color="dark" label="Sortowanie" filled :options="options" placeholder="Sortuj po" dense outlined class="text-color q-mb-sm col-xl-2 col-md-2 col-xs-7 q-ml-sm" label-color="white" style="color: white" standout="text-white"/>
+        <q-btn color="negative" label="Wyczyść filtry" @click="clearFilters" dense flat class="q-mb-sm col-xl-2 col-md-2 col-xs-3 q-ml-sm" />
       </div>
     </div>
 
@@ -95,7 +95,7 @@ watch(sortOption, () => {
 
 watch(priceQuery, () => {
   laptops.value = filterLaptops([...laptops.value], searchQuery.value, priceQuery.value);
-});
+}); 
 </script>
 
 <style>

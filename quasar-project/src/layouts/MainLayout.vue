@@ -9,7 +9,7 @@
           </q-avatar>
           FutureElectro
         </q-toolbar-title>
-        <q-toolbar-title class="row items-center">
+        <q-toolbar-title class="row items-center" >
           <q-select
             filled
             v-model="selectedItemId"
@@ -22,6 +22,7 @@
             option-value="id"
             @filter="filterFn"
             :input-style="{color:'white'}"
+            color="white"
             style="width: 50%"
           >
             <template v-slot:no-option>
