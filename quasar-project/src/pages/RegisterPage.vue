@@ -10,7 +10,7 @@
           :loop="true"
           :speed="1"
           ref="anim"
-          style="width: 300px"
+          style="width: 200px"
           class="q-mb-md"
         />
       </div>
@@ -131,7 +131,7 @@ onMounted(() => {
   color: white;
 }
 .title {
-  font-size: 3.6rem;
+  font-size: 2rem;
   margin: 0;
   font-weight: bold;
   letter-spacing: 2px;
@@ -146,7 +146,7 @@ onMounted(() => {
   font-size: 1rem;
   text-align: center;
   font-weight: 400;
-  margin: 15px 0px;
+  margin: 10px 0px;
   color: white;
   text-align: center;
 }

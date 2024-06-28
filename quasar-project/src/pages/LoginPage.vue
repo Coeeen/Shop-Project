@@ -10,7 +10,7 @@
           :loop="true"
           :speed="1"
           ref="anim"
-          style="width: 300px"
+          style="width: 200px"
         />
       </div>
 
@@ -119,7 +119,7 @@ const clearForm = () => {
 }
 
 .title {
-  font-size: 3.2rem;
+  font-size: 2rem;
   margin: 0;
   font-weight: bold;
   letter-spacing: 2px;
@@ -133,7 +133,7 @@ const clearForm = () => {
   font-size: 1rem;
   text-align: center;
   font-weight: 400;
-  margin: 15px 0px;
+  margin:0;
   color: white;
   text-align: center;
 }

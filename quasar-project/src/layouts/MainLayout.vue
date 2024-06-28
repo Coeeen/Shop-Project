@@ -21,9 +21,7 @@
             option-label="title"
             option-value="id"
             @filter="filterFn"
-            hint="Wyszukaj"
             :input-style="{color:'white'}"
-            color="white"
             style="width: 50%"
           >
             <template v-slot:no-option>
@@ -54,7 +52,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered  style="background-color: #1E222A">
+    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered  style="background-color: #1E222A;">
       <q-list class="q-pa-md q-gutter-lg q-mt-xl flex flex-center" >
         <router-link to="/" class="full-width text-dark" style="text-decoration: none">
           <q-item clickable v-ripple :class="{ 'active': activeLink === '/' }" style="width: 100%;color: white">
@@ -134,12 +132,14 @@
           <q-item-label><b>Cena:</b> {{ item.price }} zł</q-item-label>
         </div>
         <q-input v-model="couponCode" outlined placeholder="Wprowadź kod kuponu" dense class="q-my-md" style="color: white;"  />
-        <q-item-label class="text-white"><b>Łączna suma:</b>
-          {{
-            couponCode.toLowerCase() === 'biu' || couponCode.toLowerCase() === 'studia'
-              ? (totalPrice * 0.49).toFixed(2)
-              : totalPrice.toFixed(2)
-          }} zł
+        <q-item-label class="text-white"><b>Łączna suma: </b>
+          <span :style="{ color: couponCode.toLowerCase() === 'biu' || couponCode.toLowerCase() === 'studia' ? 'green' : '' }">
+    {{
+      couponCode.toLowerCase() === 'biu' || couponCode.toLowerCase() === 'studia'
+        ? (totalPrice * 0.49).toFixed(2)
+        : totalPrice.toFixed(2)
+    }} zł
+    </span>
         </q-item-label>
 
         <q-btn color="primary" class="q-mt-md" @click="proceedToCheckout">Przejdź do zapłaty</q-btn>

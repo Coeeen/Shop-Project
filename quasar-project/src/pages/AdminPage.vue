@@ -1,18 +1,21 @@
 <template>
   <div class="q-pa-md">
     <q-table
-      title="Baza danych użytkowników"
+      title="Baza danych urządzeń"
       :rows="database"
       :columns="columns"
-      row-key="name"
+      row-key="id"
       class="q-mb-md"
       dark
       :rows-per-page-options="[10, 20, 30]"
     >
       <template v-slot:body-cell-akcje="props">
         <q-td :props="props">
-          <div @click="handleDeleteFromDatabase(props.row.id)" class="q-pa-xs bg-red inline-block row justify-center items-center text-center cursor-pointer" style="border-radius: 20px;width: 50px">
+          <div @click="handleDeleteFromDatabase(props.row.id)" class="q-pa-xs bg-red q-mr-sm inline-block row justify-center items-center text-center cursor-pointer" style="border-radius: 20px;width: 50px">
             <q-icon name="delete" />
+          </div>
+          <div @click="handleEditFromDatabase(props.row.id)" class="q-pa-xs bg-blue inline-block row justify-center items-center text-center cursor-pointer" style="border-radius: 20px;width: 50px">
+            <q-icon name="edit" />
           </div>
         </q-td>
       </template>
@@ -41,34 +44,51 @@
         </q-td>
       </template>
     </q-table>
-    <div class="column col-12 justify-center items-center q-mt-md ">
-    <q-btn class="text-white bg-primary" @click="generateReport">Utwórz raport</q-btn>
 
-    <q-spinner
-      v-if="showSpinner"
-      color="primary"
-      size="10em"
-    />
+    <div class="column col-12 justify-center items-center q-mt-md">
+      <q-btn class="text-white bg-primary" @click="generateReport">Utwórz raport</q-btn>
 
-    <div class="q-pa-md q-mt-lg col-12" style="background-color: #1D1D1D" v-if="!showSpinner && reportVisible">
-      <div class="text-white text-h6">Raport sprzedażowy</div>
-      <q-card class="q-mb-md">
-        <q-card-section>
-          <div class="text-h6">Całkowita liczba sprzedanych produktów: {{ totalProductsSold.toFixed(2) }}</div>
-        </q-card-section>
-      </q-card>
-      <q-card class="q-mb-md">
-        <q-card-section>
-          <div class="text-h6">Całkowity dochód: {{ totalRevenue.toFixed(2)  }}</div>
-        </q-card-section>
-      </q-card>
-      <q-card class="q-mb-md">
-        <q-card-section>
-          <div class="text-h6">Średnia cena sprzedaży: {{ averagePrice.toFixed(2) }}</div>
-        </q-card-section>
-      </q-card>
+      <q-spinner v-if="showSpinner" color="primary" size="10em" />
+
+      <div class="q-pa-md q-mt-lg col-12" style="background-color: #1D1D1D" v-if="!showSpinner && reportVisible">
+        <div class="text-white text-h6">Raport sprzedażowy</div>
+        <q-card class="q-mb-md">
+          <q-card-section>
+            <div class="text-h6">Całkowita liczba sprzedanych produktów: {{ totalProductsSold.toFixed(2) }}</div>
+          </q-card-section>
+        </q-card>
+        <q-card class="q-mb-md">
+          <q-card-section>
+            <div class="text-h6">Całkowity dochód: {{ totalRevenue.toFixed(2) }}</div>
+          </q-card-section>
+        </q-card>
+        <q-card class="q-mb-md">
+          <q-card-section>
+            <div class="text-h6">Średnia cena sprzedaży: {{ averagePrice.toFixed(2) }}</div>
+          </q-card-section>
+        </q-card>
+      </div>
     </div>
-  </div>
+
+    <q-dialog v-model="editDialogVisible" >
+      <q-card style="width: 100vw;background-color: #1D1D1D;color: white;">
+        <q-card-section>
+          <div class="text-h6">Edycja produktu</div>
+        </q-card-section>
+
+        <q-card-section class="q-pt-none">
+          <q-input v-model="editItem.title" label="Nazwa" color="white" label-color="white"   :input-style="{color:'white'}"/>
+          <q-input v-model="editItem.description" label="Opis" color="white" label-color="white"  :input-style="{color:'white'}"/>
+          <q-input v-model="editItem.price" label="Cena" color="white" label-color="white"  :input-style="{color:'white'}"/>
+          <q-input v-model="editItem.buyers" label="Liczba zakupów" color="white" label-color="white"   :input-style="{color:'white'}"/>
+        </q-card-section>
+
+        <q-card-actions class="row justify-between">
+          <q-btn flat label="Anuluj" color="primary" @click="closeEditDialog" />
+          <q-btn flat label="Zapisz" color="primary" @click="saveEditedItem" />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
   </div>
 </template>
 
@@ -76,9 +96,13 @@
 import { ref, computed, onBeforeMount } from 'vue';
 import { useUserStore } from 'src/stores/UserStore';
 import database from "src/utils/database";
-import ButtonDefault from "components/ButtonDefault.vue";
 
 const { fetchRandomUsers, addUser, users, deleteUser } = useUserStore();
+
+const showSpinner = ref(false);
+const reportVisible = ref(false);
+const editDialogVisible = ref(false);
+const editItem = ref({}); 
 
 const totalProductsSold = computed(() => {
   return database.value.reduce((sum, item) => sum + item.buyers, 0);
@@ -90,6 +114,50 @@ const totalRevenue = computed(() => {
 
 const averagePrice = computed(() => {
   return totalProductsSold.value > 0 ? totalRevenue.value / totalProductsSold.value : 0;
+});
+
+const handleEditFromDatabase = (id) => {
+  const itemToEdit = database.value.find(item => item.id === id);
+  editItem.value = { ...itemToEdit };
+  editDialogVisible.value = true;
+};
+
+const closeEditDialog = () => {
+  editDialogVisible.value = false;
+  editItem.value = {};
+};
+
+const saveEditedItem = () => {
+  const index = database.value.findIndex(item => item.id === editItem.value.id);
+  if (index !== -1) {
+    database.value[index] = { ...editItem.value };
+  }
+  closeEditDialog();
+};
+
+const handleDeleteFromDatabase = (id) => {
+  database.value = database.value.filter(el => el.id !== id);
+};
+
+const generateReport = async () => {
+  showSpinner.value = true;
+  setTimeout(() => {
+    showSpinner.value = false;
+    reportVisible.value = true;
+  }, 2000);
+};
+
+onBeforeMount(async () => {
+  const fetchedUsers = await fetchRandomUsers();
+  fetchedUsers.forEach(user => {
+    addUser({
+      picture: user.picture,
+      email: user.email,
+      password: 'trudnehaslo123',
+      firstName: user.name.first,
+      lastName: user.name.last
+    });
+  });
 });
 
 const columns = [
@@ -125,35 +193,6 @@ const columns = [
     field: row => row.id,
   },
 ];
-
-
-const showSpinner = ref(false);
-const reportVisible = ref(false);
-
-const handleDeleteFromDatabase = (id) => {
-  database.value = database.value.filter(el => el.id !== id);
-};
-
-const generateReport = async () => {
-  showSpinner.value = true;
-  setTimeout(() => {
-    showSpinner.value = false;
-    reportVisible.value = true;
-  }, 2000);
-};
-
-onBeforeMount(async () => {
-  const fetchedUsers = await fetchRandomUsers();
-  fetchedUsers.forEach(user => {
-    addUser({
-      picture: user.picture,
-      email: user.email,
-      password: 'trudnehaslo123',
-      firstName: user.name.first,
-      lastName: user.name.last
-    });
-  });
-});
 
 const columnsUsers = [
   {
