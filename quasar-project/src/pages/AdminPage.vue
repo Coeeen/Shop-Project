@@ -38,7 +38,7 @@
       </template>
       <template v-slot:body-cell-akcje="props">
         <q-td :props="props">
-          <div @click="deleteUser(props.row.email)" class="q-pa-xs bg-red inline-block row justify-center items-center text-center cursor-pointer" style="border-radius: 20px;width: 50px">
+          <div @click="handleDeleteUser(props.row.email)" class="q-pa-xs bg-red inline-block row justify-center items-center text-center cursor-pointer" style="border-radius: 20px;width: 50px">
             <q-icon name="delete" />
           </div>
         </q-td>
@@ -96,8 +96,10 @@
 import { ref, computed, onBeforeMount } from 'vue';
 import { useUserStore } from 'src/stores/UserStore';
 import database from "src/utils/database";
+import { storeToRefs } from 'pinia';
 
-const { fetchRandomUsers, addUser, users, deleteUser } = useUserStore();
+const { fetchRandomUsers, addUser, deleteUser } = useUserStore();
+const {users} = storeToRefs(useUserStore())
 
 const showSpinner = ref(false);
 const reportVisible = ref(false);
@@ -137,6 +139,10 @@ const saveEditedItem = () => {
 
 const handleDeleteFromDatabase = (id) => {
   database.value = database.value.filter(el => el.id !== id);
+};
+
+const handleDeleteUser = (email) => {
+  users.value = users.value.filter(el => el.email !== email);
 };
 
 const generateReport = async () => {

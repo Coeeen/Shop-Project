@@ -8,6 +8,8 @@ const smartphones = ref([
     description: 'Najnowszy iPhone z ekranem Super Retina XDR, A15 Bionic i potrójnym aparatem.',
     price: 5899.99,
     buyers: 120,
+    color:'black',
+    size:'normal',
     comment: {
       rating: 4.8,
       author: 'Sophie Brown',
@@ -28,6 +30,8 @@ const smartphones = ref([
     description: 'Flagowy model Samsunga z ekranem Dynamic AMOLED 2X, Exynos 2200 i rewolucyjnym aparatem.',
     price: 6399.99,
     buyers: 110,
+    color:'black',
+    size:'max',
     comment: {
       rating: 4.7,
       author: 'David White',
@@ -48,6 +52,8 @@ const smartphones = ref([
     description: 'Smartfon Xiaomi z ekranem AMOLED, Snapdragon 8 Gen 1 i potrójnym aparatem.',
     price: 4599.99,
     buyers: 95,
+    color:'black',
+    size:'max',
     comment: {
       rating: 4.5,
       author: 'Emily Martinez',
@@ -68,6 +74,8 @@ const smartphones = ref([
     description: 'Flagowy smartfon OnePlus z ekranem Fluid AMOLED 2.0, Snapdragon 8 Gen 1 i potrójnym aparatem.',
     price: 5099.99,
     buyers: 100,
+    color:'white',
+    size:'normal',
     comment: {
       rating: 4.6,
       author: 'Noah Taylor',
@@ -88,6 +96,8 @@ const smartphones = ref([
     description: 'Nowoczesny smartfon Google z ekranem OLED, Snapdragon 8 Gen 1 i potrójnym aparatem.',
     price: 4799.99,
     buyers: 90,
+    color:'white',
+    size:'max',
     comment: {
       rating: 4.4,
       author: 'Sophia Davis',

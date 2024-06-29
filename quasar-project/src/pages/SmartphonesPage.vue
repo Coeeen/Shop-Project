@@ -55,7 +55,7 @@ const sortLaptops = (data, option) => {
     case 'Sortuj po ocenach':
       sortedData.sort((a, b) => {
         if (!a.comment || !b.comment || !a.comment.rating || !b.comment.rating) {
-          return 0; // Obsługa brakujących ocen
+          return 0; 
         }
         return b.comment.rating - a.comment.rating;
       });

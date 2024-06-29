@@ -31,7 +31,7 @@
         </div>
         <div class="col-md-4">
           <label class="text-white">Hasło:</label>
-          <q-input v-model="password" id="password" hint="Formikowy hint do hasła" type="password" color="white" outlined dense class="bg-white text-dark" :input-style="{color:'black'}" />
+          <q-input v-model="password" id="password" hint="Formikowy hint do hasła" maxlength="15" type="password" color="white" outlined dense class="bg-white text-dark" :input-style="{color:'black'}" />
         </div>
       </div>
       <div class="row col-12 justify-center items-center q-mt-md">

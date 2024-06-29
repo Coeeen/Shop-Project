@@ -19,9 +19,7 @@
 import { ref, computed, watch, toRefs } from 'vue';
 import laptopsData from '../utils/laptops';
 import ListItem from 'src/components/ListItem.vue';
-import { useRouter } from 'vue-router';
 
-const router = useRouter();
 
 const { laptops, searchQuery, priceQuery, sortOption } = toRefs({
   laptops: ref(laptopsData),
@@ -68,12 +66,6 @@ const sortLaptops = (data, option) => {
   return sortedData;
 };
 
-const clearFilters = () => {
-  searchQuery.value = '';
-  priceQuery.value = null;
-  sortOption.value = null;
-  laptops.value = [...laptopsData.value];
-};
 
 const filteredLaptops = computed(() => {
   let filteredData = laptops.value;
@@ -83,7 +75,7 @@ const filteredLaptops = computed(() => {
 
     if (sortOption.value) {
       filteredData = sortLaptops(filteredData, sortOption.value);
-    }
+    } 
   }
 
   return filteredData;
@@ -96,6 +88,14 @@ watch(sortOption, () => {
 watch(priceQuery, () => {
   laptops.value = filterLaptops([...laptops.value], searchQuery.value, priceQuery.value);
 }); 
+
+
+const clearFilters = () => {
+  searchQuery.value = '';
+  priceQuery.value = null;
+  sortOption.value = null;
+  laptops.value = [...laptopsData.value];
+};
 </script>
 
 <style>

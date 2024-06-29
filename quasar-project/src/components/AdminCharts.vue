@@ -57,7 +57,6 @@ export default defineComponent({
     };
   },
   mounted() {
-    // Render the charts
     this.$refs.barChart.renderChart(this.barChartData, this.barChartOptions);
     this.$refs.pieChart.renderChart(this.pieChartData, this.pieChartOptions);
   }

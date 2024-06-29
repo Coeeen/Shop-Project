@@ -17,7 +17,7 @@
       <div class="column q-col-gutter-lg justify-center" style="margin-top: 5px">
         <div class="col-12 col-md-6">
           <label class="text-white">Email:</label>
-          <q-input v-model="email" id="email" hint="Formikowy hint do maila" maxlength="15" type="email" color="white" outlined dense class="bg-white text-dark" :input-style="{color:'black'}" />
+          <q-input v-model="email" id="email" hint="Formikowy hint do maila"  type="email" color="white" outlined dense class="bg-white text-dark" :input-style="{color:'black'}" />
         </div>
         <div class="col-12 col-md-6">
           <label class="text-white">Hasło:</label>

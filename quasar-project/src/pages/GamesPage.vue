@@ -23,9 +23,6 @@ import ListItem from 'src/components/ListItem.vue';
 
 const viewType = ref(true);
 
-const handleChangeViewType = () => {
-  viewType.value = !viewType.value;
-}
 
 const { laptops, searchQuery, sortOption } = toRefs({
   laptops: ref(laptopsData),
@@ -55,7 +52,7 @@ const sortLaptops = (data, option) => {
     case 'Sortuj po ocenach':
       sortedData.sort((a, b) => {
         if (!a.comment || !b.comment || !a.comment.rating || !b.comment.rating) {
-          return 0; // Obsługa brakujących ocen
+          return 0; 
         }
         return b.comment.rating - a.comment.rating;
       });
