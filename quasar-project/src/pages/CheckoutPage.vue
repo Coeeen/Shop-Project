@@ -24,7 +24,7 @@
 
       <q-step name="payment-method" title="Metoda płatności" class="text-white">
         <div class="q-pa-md">
-          <h2 class="text-h5">Metoda płatności</h2>
+          <h2 class="text-h5">Metoda płatności kwoty {{ discountedPrice }}</h2>
           <q-form @submit.prevent="nextStep('contact-details')" class="q-gutter-md">
             <q-select v-model="paymentMethod" class="bg-white" label="Wybierz metodę płatności" outlined dense :options="paymentMethods" />
             <div class="q-mt-md">
@@ -57,7 +57,7 @@
 </template>
 
 <script setup>
-import {onMounted, ref} from 'vue';
+import {onMounted, ref,inject} from 'vue';
 import { useRouter } from 'vue-router';
 import { useQuasar } from 'quasar';
 import { shopStore } from "src/stores/ShopStore"
@@ -70,6 +70,7 @@ const { randomFactsAbautCat } = useUserStore()
 
 const $q = useQuasar();
 const router = useRouter();
+const discountedPrice = inject('discountedPrice');
 
 
 

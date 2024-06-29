@@ -59,6 +59,12 @@
         <p>Otrzymuj najnowsze informacje o promocjach i nowych produktach</p>
       </div>
     </div>
+    <div>
+      <!-- <q-card v-for="itemElement in database" :key="itemElement.title" >
+      <ListItem :item="itemElement" />
+    </q-card> -->
+      
+    </div>
   </q-page>
 </template>
 
@@ -66,6 +72,8 @@
 import "../css/app.scss"
 import Home from "assets/svg/Home.json";
 import {LottieAnimation} from "lottie-web-vue";
+import ListItem from "src/components/ListItem.vue";
+import database from "src/utils/database";
 
 defineOptions({
   name: 'IndexPage'
@@ -156,8 +164,7 @@ defineOptions({
 
 .we-assure-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin-top: 8rem;
 }
 

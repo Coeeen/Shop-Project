@@ -9,7 +9,7 @@
           </q-avatar>
           FutureElectro
         </q-toolbar-title>
-        <q-toolbar-title class="row items-center" >
+        <q-toolbar-title class="row items-center">
           <q-select
             filled
             v-model="selectedItemId"
@@ -21,8 +21,7 @@
             option-label="title"
             option-value="id"
             @filter="filterFn"
-            :input-style="{color:'white'}"
-            color="white"
+            :input-style="{ color: '#FFFF' }"
             style="width: 50%"
           >
             <template v-slot:no-option>
@@ -33,7 +32,7 @@
               </q-item>
             </template>
           </q-select>
-          <q-btn class="bg-white text-dark q-ml-md" style="height: 20px;color: red" @click="navigateToItem">Szukaj</q-btn>
+          <q-btn class="bg-white text-dark q-ml-md" style="height: 20px; color: red" @click="navigateToItem">Szukaj</q-btn>
         </q-toolbar-title>
         <div class="row col-2 justify-around" v-if="!isAuthenticated">
           <router-link to="/login" class="text-dark" style="text-decoration: none">
@@ -53,10 +52,10 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered  style="background-color: #1E222A;">
-      <q-list class="q-pa-md q-gutter-lg q-mt-xl flex flex-center" >
+    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered style="background-color: #1E222A;">
+      <q-list class="q-pa-md q-gutter-lg q-mt-xl flex flex-center">
         <router-link to="/" class="full-width text-dark" style="text-decoration: none">
-          <q-item clickable v-ripple :class="{ 'active': activeLink === '/' }" style="width: 100%;color: white">
+          <q-item clickable v-ripple :class="{ 'active': activeLink === '/' }" style="width: 100%; color: white">
             <q-item-section avatar>
               <q-icon name="home" />
             </q-item-section>
@@ -66,7 +65,7 @@
           </q-item>
         </router-link>
         <router-link to="/laptops" class="full-width text-dark" style="text-decoration: none">
-          <q-item clickable v-ripple :class="{ 'active': activeLink === '/laptops' }" style="width: 100%;color: white">
+          <q-item clickable v-ripple :class="{ 'active': activeLink === '/laptops' }" style="width: 100%; color: white">
             <q-item-section avatar>
               <q-icon name="laptop" />
             </q-item-section>
@@ -76,7 +75,7 @@
           </q-item>
         </router-link>
         <router-link to="/computers" class="full-width text-dark" style="text-decoration: none">
-          <q-item clickable v-ripple :class="{ 'active': activeLink === '/computers' }" style="width: 100%;color: white">
+          <q-item clickable v-ripple :class="{ 'active': activeLink === '/computers' }" style="width: 100%; color: white">
             <q-item-section avatar>
               <q-icon name="desktop_windows" />
             </q-item-section>
@@ -86,7 +85,7 @@
           </q-item>
         </router-link>
         <router-link to="/components" class="full-width text-dark" style="text-decoration: none">
-          <q-item clickable v-ripple :class="{ 'active': activeLink === '/components' }" style="width: 100%;color: white">
+          <q-item clickable v-ripple :class="{ 'active': activeLink === '/components' }" style="width: 100%; color: white">
             <q-item-section avatar>
               <q-icon name="memory" />
             </q-item-section>
@@ -96,7 +95,7 @@
           </q-item>
         </router-link>
         <router-link to="/smartphones" class="full-width text-dark" style="text-decoration: none">
-          <q-item clickable v-ripple :class="{ 'active': activeLink === '/smartphones' }" style="width: 100%;color: white">
+          <q-item clickable v-ripple :class="{ 'active': activeLink === '/smartphones' }" style="width: 100%; color: white">
             <q-item-section avatar>
               <q-icon name="smartphone" />
             </q-item-section>
@@ -106,7 +105,7 @@
           </q-item>
         </router-link>
         <router-link to="/games" class="full-width text-dark" style="text-decoration: none">
-          <q-item clickable v-ripple :class="{ 'active': activeLink === '/games' }" style="width: 100%;color: white">
+          <q-item clickable v-ripple :class="{ 'active': activeLink === '/games' }" style="width: 100%; color: white">
             <q-item-section avatar>
               <q-icon name="sports_esports" />
             </q-item-section>
@@ -118,9 +117,9 @@
       </q-list>
     </q-drawer>
 
-    <q-drawer v-if="isAuthenticated" show-if-above v-model="rightDrawerOpen" side="right" bordered style="background-color: #1E222A">
+    <q-drawer v-if="isAuthenticated" show-if-above v-model="rightDrawerOpen" side="right" bordered style="background-color: #1E222A;">
       <div v-if="card.length > 0" class="q-pa-md">
-        <div v-for="(item, index) in card" :key="index" class="q-mb-md q-pa-md text-white" style="border-radius: 20px; background-color: #0D0D13">
+        <div v-for="(item, index) in card" :key="index" class="q-mb-md q-pa-md text-white" style="border-radius: 20px; background-color: #0D0D13;">
           <div class="row col-12 justify-between">
             <q-img :src="item.photo" alt="item Photo" class="item-photo" width="50px" height="50px" style="border-radius: 5px" />
             <div class="row col-6 justify-between items-center">
@@ -132,15 +131,15 @@
           <q-item-label class="q-mt-sm">{{ item.title }}</q-item-label>
           <q-item-label><b>Cena:</b> {{ item.price }} zł</q-item-label>
         </div>
-        <q-input v-model="couponCode" outlined placeholder="Wprowadź kod kuponu" dense class="q-my-md" style="color: white;"  />
+        <q-input v-model="couponCode" outlined placeholder="Wprowadź kod kuponu" dense class="q-my-md" style="color: white;" />
         <q-item-label class="text-white"><b>Łączna suma: </b>
           <span :style="{ color: couponCode.toLowerCase() === 'biu' || couponCode.toLowerCase() === 'studia' ? 'green' : '' }">
-    {{
-      couponCode.toLowerCase() === 'biu' || couponCode.toLowerCase() === 'studia'
-        ? (totalPrice * 0.49).toFixed(2)
-        : totalPrice.toFixed(2)
-    }} zł
-    </span>
+            {{
+              couponCode.toLowerCase() === 'biu' || couponCode.toLowerCase() === 'studia'
+                ? discountedPriceValue
+                : totalPrice.toFixed(2)
+            }} zł
+          </span>
         </q-item-label>
 
         <q-btn color="primary" class="q-mt-md" @click="proceedToCheckout">Przejdź do zapłaty</q-btn>
@@ -157,7 +156,7 @@
 </template>
 
 <script>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, provide } from 'vue'
 import { useUserStore } from 'src/stores/UserStore'
 import { shopStore } from 'src/stores/ShopStore'
 import { storeToRefs } from 'pinia'
@@ -170,9 +169,10 @@ export default {
     const rightDrawerOpen = ref(false)
     const selectedItemId = ref(null)
     const search = ref('')
-    const couponCode = ref('');
+    const couponCode = ref('')
+    const discountedPriceValue = ref(0)
     const { isAuthenticated } = storeToRefs(useUserStore())
-    const { card, cupons, totalPrice } = storeToRefs(shopStore())
+    const { card, totalPrice } = storeToRefs(shopStore())
     const { addItemToCard, removeItemFromCard } = shopStore()
     const router = useRouter()
     const route = useRoute()
@@ -208,12 +208,20 @@ export default {
     }
 
     const proceedToCheckout = () => {
-      router.push('/checkout');
-    };
+      router.push('/checkout')
+    }
 
     watch(route, (newRoute) => {
       activeLink.value = newRoute.path
     })
+
+    watch([couponCode, totalPrice], () => {
+      discountedPriceValue.value = (couponCode.value.toLowerCase() === 'biu' || couponCode.value.toLowerCase() === 'studia')
+        ? (totalPrice.value * 0.49).toFixed(2)
+        : totalPrice.value.toFixed(2)
+    })
+
+    provide('discountedPrice', discountedPriceValue)
 
     return {
       card,
@@ -226,7 +234,6 @@ export default {
       totalPrice,
       addItemToCard,
       removeItemFromCard,
-      cupons,
       couponCode,
       filterFn,
       toggleLeftDrawer,
@@ -234,6 +241,7 @@ export default {
       navigateToItem,
       proceedToCheckout,
       activeLink,
+      discountedPriceValue,
     }
   }
 }
